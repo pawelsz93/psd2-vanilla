@@ -1,0 +1,34 @@
+.sideNavigation {
+  width: 5vw;
+  height: 70vh;
+  border-left: 2px solid $font-color-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__link {
+    border: none;
+    background-color: transparent;
+    color: $font-color;
+    cursor: pointer;
+
+    & span {
+      display: none;
+    }
+
+    &--active span {
+      display: inline;
+    }
+
+    &::before {
+      content: "00";
+    }
+
+    &--active::before {
+      content: "09";
+      display: block;
+      position: absolute;
+      transform: translateX(-20px);
+    }
+  }
+}

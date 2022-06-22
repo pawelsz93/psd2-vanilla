@@ -1,0 +1,96 @@
+$text-vertical-margin: 20px;
+
+.workCaruzelaSection {
+  // background-color: rgb(97, 207, 97);
+  color: $font-color;
+  height: 70vh;
+  flex-grow: 1;
+  margin-right: 5vw;
+  // display: none;
+
+  &__title {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 100px;
+    font-family: $font-family;
+  }
+}
+
+.caruzela {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__nextButton {
+    padding: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: $font-color-dark;
+    cursor: pointer;
+    &:nth-child(1) img {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__workElement {
+    height: 150px;
+
+    // &:nth-child(1) {
+    //   order: -5;
+    // }
+
+    &--active {
+      height: 300px;
+
+      .workElement__img {
+        width: 300px;
+      }
+
+      .workElement__text {
+        display: block;
+      }
+    }
+  }
+}
+
+.workElement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-family;
+  margin: 50px;
+
+  &__img {
+    width: 150px;
+  }
+
+  h3 {
+    margin-top: $text-vertical-margin;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__text {
+    text-align: center;
+    display: none;
+    max-width: 300px;
+    margin: $text-vertical-margin 10px;
+  }
+}
+
+.index1 {
+  order: 1;
+}
+.index2 {
+  order: 2;
+}
+.index3 {
+  order: 4;
+}
+.index4 {
+  order: 3;
+}
+.index5 {
+  order: 5;
+}

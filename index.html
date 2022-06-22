@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Futuristic site</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <img src="/logo.png" alt="logo" class="header__titleElement" />
+        <h1 class="header__titleElement">Global</h1>
+        <button class="hireUsButton">Hire us</button>
+        <div class="header__hamburgerWrapper"><button class="header__hamburgerBtn"></button></div>
+      </header>
+      <nav>
+        <ol class="sideNavigation">
+          <li>
+            <a class="sideNavigation__link" id="01_sideNav"><span id="01_span">Home</span></a>
+          </li>
+          <li>
+            <a class="sideNavigation__link" id="02_sideNav"><span id="02_span">Works</span></a>
+          </li>
+          <li>
+            <a class="sideNavigation__link" id="03_sideNav"><span id="03_span">About</span></a>
+          </li>
+          <li>
+            <a class="sideNavigation__link" id="04_sideNav"><span id="04_span">Contact</span></a>
+          </li>
+          <li>
+            <a class="sideNavigation__link" id="05_sideNav"><span id="05_span">Hire us</span></a>
+          </li>
+        </ol>
+      </nav>
+      <main>
+        <section class="homeSection" id="homeSection">
+          <div class="homeSection__up upperPart">
+            <h2 class="bigText">Your next <br />interactive <br />experience</h2>
+            <button class="hireUsButton hireUsButton--flexible">Hire us<img src="/images/arrow.png" alt="" /></button>
+            <img class="upperPart__cosmonautImg" src="/images/img.png" alt="cosmonaut" />
+          </div>
+          <div class="homeSection__bottom bottomPart">
+            <div class="bottomPart__element">
+              <h3>Metiew & Smith</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quae?</p>
+            </div>
+            <div class="bottomPart__element">
+              <h3>Fantasy interactive</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quae?</p>
+            </div>
+            <div class="bottomPart__element">
+              <h3>Paul & Shark</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quae?</p>
+            </div>
+          </div>
+        </section>
+        <section class="workCaruzelaSection" id="caruzelaSection">
+          <h2 class="workCaruzelaSection__title">Selected work</h2>
+          <div class="workCaruzelaSection__caruzela caruzela">
+            <button class="caruzela__nextButton index1"><img src="/images/arrow.png" alt="arrow" /></button>
+            <div class="caruzela__workElement workElement index2">
+              <img src="./images/Layer 2.png" alt="" class="workElement__img" />
+              <h3>Metiew & Smith</h3>
+              <p class="workElement__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="caruzela__workElement workElement index3">
+              <img src="./images/Layer 1.png" alt="" class="workElement__img" />
+              <h3>Alex Nowak</h3>
+              <p class="workElement__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="caruzela__workElement workElement index4 caruzela__workElement--active">
+              <img src="./images/Layer 3.png" alt="" class="workElement__img" />
+              <h3>Victory</h3>
+              <p class="workElement__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <button class="caruzela__nextButton index5"><img src="/images/arrow.png" alt="" /></button>
+          </div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

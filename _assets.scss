@@ -1,0 +1,9 @@
+@mixin blueButtonMixin {
+  font-weight: 900;
+  background-color: $blue-color;
+  color: $font-color;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 6px 18px;
+}

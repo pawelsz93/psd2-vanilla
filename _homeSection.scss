@@ -1,0 +1,87 @@
+.homeSection {
+  display: none;
+  color: $font-color;
+  font-family: $font-family;
+  width: 70vw;
+  &__up {
+    height: 50vh;
+  }
+}
+
+.upperPart {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid;
+  border-bottom-color: $font-color-dark;
+  &__cosmonautImg {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+}
+
+.bottomPart {
+  display: flex;
+  &__element {
+    margin: 20px 30px;
+    opacity: 0.2;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    & h3 {
+      margin: 20px 0 20px 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.hireUsButton--flexible {
+  position: relative;
+  top: 50px;
+  background-color: transparent;
+  color: $font-color;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  & img {
+    vertical-align: text-top;
+  }
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    z-index: -1;
+    left: 10px;
+    top: -2px;
+    height: 25px;
+    background-color: $blue-color;
+  }
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 100px;
+    z-index: -1;
+    left: 10px;
+    top: -2px;
+    height: 25px;
+    background-color: $blue-color;
+    transition: all 0.2s;
+  }
+  &:hover::before {
+    left: -10px;
+  }
+}
+
+.bigText {
+  font-size: $font-big;
+  line-height: 1;
+  color: $font-color;
+  font-weight: 900;
+}

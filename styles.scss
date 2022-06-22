@@ -1,0 +1,30 @@
+@import "variables";
+@import "assets";
+
+@import "header";
+@import "homeSection";
+@import "navigation";
+@import "workCaruzelaSection";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: $color-background;
+}
+
+.wrapper {
+  max-width: 1700px;
+  margin: 0 5vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main {
+  flex-grow: 1;
+  max-width: 100vw;
+  height: 70vh;
+}
