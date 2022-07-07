@@ -190,6 +190,16 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  list-style-type: square;
+}
+
+.sideNavigation li {
+  margin-left: 8px;
+}
+
+.sideNavigation li::marker {
+  color: red;
+  font-size: 6px;
 }
 
 .sideNavigation__link {
@@ -208,11 +218,10 @@
 }
 
 .sideNavigation__link::before {
-  content: "00";
+  content: attr(data-index);
 }
 
 .sideNavigation__link--active::before {
-  content: "09";
   display: block;
   position: absolute;
   -webkit-transform: translateX(-20px);

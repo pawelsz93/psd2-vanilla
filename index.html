@@ -17,23 +17,23 @@
         <div class="header__hamburgerWrapper"><button class="header__hamburgerBtn"></button></div>
       </header>
       <nav>
-        <ol class="sideNavigation">
+        <ul class="sideNavigation">
           <li>
-            <a class="sideNavigation__link" id="01_sideNav"><span id="01_span">Home</span></a>
+            <a class="sideNavigation__link" id="01_sideNav" data-index="01"><span id="01_span">Home</span></a>
           </li>
           <li>
-            <a class="sideNavigation__link" id="02_sideNav"><span id="02_span">Works</span></a>
+            <a class="sideNavigation__link" id="02_sideNav" data-index="02"><span id="02_span">Works</span></a>
           </li>
           <li>
-            <a class="sideNavigation__link" id="03_sideNav"><span id="03_span">About</span></a>
+            <a class="sideNavigation__link" id="03_sideNav" data-index="03"><span id="03_span">About</span></a>
           </li>
           <li>
-            <a class="sideNavigation__link" id="04_sideNav"><span id="04_span">Contact</span></a>
+            <a class="sideNavigation__link" id="04_sideNav" data-index="04"><span id="04_span">Contact</span></a>
           </li>
           <li>
-            <a class="sideNavigation__link" id="05_sideNav"><span id="05_span">Hire us</span></a>
+            <a class="sideNavigation__link" id="05_sideNav" data-index="05"><span id="05_span">Hire us</span></a>
           </li>
-        </ol>
+        </ul>
       </nav>
       <main>
         <section class="homeSection" id="homeSection">
@@ -66,12 +66,12 @@
               <h3>Metiew & Smith</h3>
               <p class="workElement__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
-            <div class="caruzela__workElement workElement index3">
+            <div class="caruzela__workElement workElement index3 caruzela__workElement--active">
               <img src="./images/Layer 1.png" alt="" class="workElement__img" />
               <h3>Alex Nowak</h3>
               <p class="workElement__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </div>
-            <div class="caruzela__workElement workElement index4 caruzela__workElement--active">
+            <div class="caruzela__workElement workElement index4">
               <img src="./images/Layer 3.png" alt="" class="workElement__img" />
               <h3>Victory</h3>
               <p class="workElement__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -79,7 +79,18 @@
             <button class="caruzela__nextButton index5"><img src="/images/arrow.png" alt="" /></button>
           </div>
         </section>
-        <section></section>
+        <section class="aboutSection" id="aboutSection">
+          <h2>We believie in passionate people</h2>
+          <a href="#">Career</a>
+          <div>
+            <img src="" alt="Winners" />
+            <label for="Winners"></label>
+            <img src="" alt="Philosophy" />
+            <label for="Philosophy"></label>
+            <img src="" alt="History" />
+            <label for="History"></label>
+          </div>
+        </section>
         <section></section>
         <section></section>
       </main>

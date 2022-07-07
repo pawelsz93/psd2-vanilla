@@ -5,6 +5,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  list-style-type: square;
+  // list-style-position: inside;
+
+  & li {
+    margin-left: 8px;
+
+    &::marker {
+      color: red;
+      font-size: 6px;
+    }
+  }
 
   &__link {
     border: none;
@@ -21,11 +32,11 @@
     }
 
     &::before {
-      content: "00";
+      // content: var(--buttonBeforeContent, "00");
+      content: attr(data-index);
     }
 
     &--active::before {
-      content: "09";
       display: block;
       position: absolute;
       transform: translateX(-20px);
