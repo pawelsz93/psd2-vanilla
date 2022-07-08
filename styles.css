@@ -348,6 +348,10 @@
           order: 5;
 }
 
+.aboutSection {
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
