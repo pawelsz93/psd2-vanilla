@@ -1,47 +1,82 @@
 const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
 const homeSection = document.getElementById("homeSection");
-const caruzelaSection = document.getElementById("caruzelaSection");
+const worksSection = document.getElementById("worksSection");
 const aboutSection = document.getElementById("aboutSection");
+const contactSection = document.getElementById("contactSection");
+const hireUsSection = document.getElementById("hireUsSection");
 const homeLink = document.getElementById("01_sideNav");
 const worksLink = document.getElementById("02_sideNav");
 const aboutLink = document.getElementById("03_sideNav");
 const contactLink = document.getElementById("04_sideNav");
 const hireUsLink = document.getElementById("05_sideNav");
+const allSections = [homeSection, worksSection, aboutSection, contactSection, hireUsSection];
+const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
 
 function getSectionIndexFromID(id) {
   return id.slice(0, 2);
 }
 
 function showHomeSection() {
-  caruzelaSection.style.display = "none";
-  aboutSection.style.display = "none";
+  allSections.forEach(section => {
+    section.style.display = "none";
+  });
   homeSection.style.display = "block";
-  worksLink.classList.remove("sideNavigation__link--active");
+
+  allLinks.forEach(link => {
+    link.classList.remove("sideNavigation__link--active");
+  });
+
+  // worksLink.classList.remove("sideNavigation__link--active");
   homeLink.classList.add("sideNavigation__link--active");
-  aboutLink.classList.remove("sideNavigation__link--active");
+  // aboutLink.classList.remove("sideNavigation__link--active");
 }
 
 function showWorksSection() {
-  homeSection.style.display = "none";
-  aboutSection.style.display = "none";
-  caruzelaSection.style.display = "block";
+  allSections.forEach(section => {
+    section.style.display = "none";
+  });
+  worksSection.style.display = "block";
   homeLink.classList.remove("sideNavigation__link--active");
   worksLink.classList.add("sideNavigation__link--active");
   aboutLink.classList.remove("sideNavigation__link--active");
 }
 
 function showAboutSection() {
-  homeSection.style.display = "none";
-  caruzelaSection.style.display = "none";
+  allSections.forEach(section => {
+    section.style.display = "none";
+  });
   aboutSection.style.display = "block";
   homeLink.classList.remove("sideNavigation__link--active");
   worksLink.classList.remove("sideNavigation__link--active");
   aboutLink.classList.add("sideNavigation__link--active");
 }
 
-function showContactSection() {}
+function showContactSection() {
+  allSections.forEach(section => {
+    section.style.display = "none";
+  });
+  contactSection.style.display = "block";
 
-function showHireUsSection() {}
+  allLinks.forEach(link => {
+    link.classList.remove("sideNavigation__link--active");
+  });
+
+  contactLink.classList.add("sideNavigation__link--active");
+}
+
+function showHireUsSection() {
+  allSections.forEach(section => {
+    section.style.display = "none";
+  });
+
+  hireUsSection.style.display = "block";
+
+  allLinks.forEach(link => {
+    link.classList.remove("sideNavigation__link--active");
+  });
+
+  hireUsLink.classList.add("sideNavigation__link--active");
+}
 
 function changeActiveSection(e) {
   const { id } = e.target;
