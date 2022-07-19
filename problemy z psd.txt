@@ -1,1 +1,2 @@
 marker do li ustawić żeby był w tej samej odległości co border
+jeśli element pojawia się i znika za pomcą display to animację trzeba zrobić za pomoca opacity i keyframes bo samo transition nie zadziała
