@@ -178,7 +178,7 @@
 }
 
 .sideNavigation {
-  width: 5vw;
+  min-width: 5vw;
   height: 70vh;
   border-left: 2px solid #333;
   display: -webkit-box;
@@ -199,7 +199,7 @@
 
 .sideNavigation li::marker {
   color: red;
-  font-size: 6px;
+  font-size: 10px;
 }
 
 .sideNavigation__link {
@@ -214,22 +214,26 @@
 }
 
 .sideNavigation__link--active span {
+  line-height: 30px;
   display: inline;
+  padding-left: 10px;
 }
 
 .sideNavigation__link::before {
+  line-height: 30px;
   content: attr(data-index);
 }
 
 .sideNavigation__link--active::before {
   display: block;
   position: absolute;
-  -webkit-transform: translateX(-20px);
-          transform: translateX(-20px);
+  -webkit-transform: translateX(-45px);
+          transform: translateX(-45px);
 }
 
 .workCaruzelaSection {
   color: #fff;
+  width: 70vw;
   height: 70vh;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;

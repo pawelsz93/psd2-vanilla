@@ -1,5 +1,5 @@
 .sideNavigation {
-  width: 5vw;
+  min-width: 5vw;
   height: 70vh;
   border-left: 2px solid $font-color-dark;
   display: flex;
@@ -10,10 +10,11 @@
 
   & li {
     margin-left: 8px;
+    // background-color: rgb(113, 198, 113);
 
     &::marker {
       color: red;
-      font-size: 6px;
+      font-size: 10px;
     }
   }
 
@@ -28,18 +29,20 @@
     }
 
     &--active span {
+      line-height: 30px;
       display: inline;
+      padding-left: 10px;
     }
 
     &::before {
-      // content: var(--buttonBeforeContent, "00");
+      line-height: 30px;
       content: attr(data-index);
     }
 
     &--active::before {
       display: block;
       position: absolute;
-      transform: translateX(-20px);
+      transform: translateX(-45px);
     }
   }
 }
