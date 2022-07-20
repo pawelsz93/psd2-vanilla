@@ -376,6 +376,21 @@
   color: #fff;
 }
 
+.careerButton {
+  padding: 5px 5px;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  word-spacing: 5px;
+}
+
+.careerButton img {
+  height: 10px;
+  line-height: 10px;
+  vertical-align: middle;
+}
+
 * {
   margin: 0;
   padding: 0;
