@@ -1,8 +1,12 @@
 .aboutSection {
   color: $font-color;
+
+  &__motto {
+    font-size: $font-medium;
+  }
 }
 
- .careerButton { 
+.careerButton {
   padding: 5px 5px;
   font-size: 16px;
   text-decoration: none;
@@ -14,6 +18,9 @@
     height: 10px;
     line-height: 10px;
     vertical-align: middle;
-
   }
- }
+}
+
+.aboutButtons {
+  display: none;
+}
