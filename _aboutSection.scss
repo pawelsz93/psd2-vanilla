@@ -2,7 +2,25 @@
   color: $font-color;
 
   &__motto {
+    // position: relative;
     font-size: $font-medium;
+
+    span {
+      color: $blue-color;
+    }
+
+    &::after {
+      // position: absolute;
+      // top: 0px;
+      // left: 0px;
+      // display: block;
+      // width: 50px;
+      // height: 50px;
+      // background-color: $blue-color;
+    }
+
+    &::before {
+    }
   }
 }
 
