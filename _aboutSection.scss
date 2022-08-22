@@ -2,24 +2,63 @@
   color: $font-color;
 
   &__motto {
-    // position: relative;
+    position: relative;
     font-size: $font-medium;
 
-    span {
-      color: $blue-color;
+    .span {
+      &--in {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 62px;
+          left: 169px;
+          width: 26px;
+          height: 26px;
+          border-radius: 13px;
+          background-color: $blue-color;
+        }
+      }
+
+      &--dot {
+        color: transparent;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 231px;
+          left: 159px;
+          width: 9px;
+          height: 9px;
+          background-color: $blue-color;
+        }
+      }
     }
 
+    //rotated square decoration
     &::after {
-      // position: absolute;
-      // top: 0px;
-      // left: 0px;
-      // display: block;
-      // width: 50px;
-      // height: 50px;
-      // background-color: $blue-color;
+      content: "";
+      position: absolute;
+      top: 50px;
+      left: 250px;
+      width: $decoration-size;
+      height: $decoration-size;
+      transform: rotate(45deg);
+      background-color: $blue-color;
     }
 
+    //rotated square decoration
     &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 130px;
+      width: 0px;
+      height: 0px;
+      border-right: $decoration-size solid $blue-color;
+      border-left: 0;
+      border-bottom: $decoration-size solid transparent;
+      border-top: $decoration-size solid transparent;
+      transform: rotate(20deg);
     }
   }
 }

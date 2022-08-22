@@ -377,11 +377,60 @@
 }
 
 .aboutSection__motto {
+  position: relative;
   font-size: 55px;
 }
 
-.aboutSection__motto span {
-  color: #0f33ff;
+.aboutSection__motto .span--in::after {
+  content: "";
+  position: absolute;
+  top: 62px;
+  left: 169px;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #0f33ff;
+}
+
+.aboutSection__motto .span--dot {
+  color: transparent;
+}
+
+.aboutSection__motto .span--dot::after {
+  content: "";
+  position: absolute;
+  top: 231px;
+  left: 159px;
+  width: 9px;
+  height: 9px;
+  background-color: #0f33ff;
+}
+
+.aboutSection__motto::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: #0f33ff;
+}
+
+.aboutSection__motto::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 130px;
+  width: 0px;
+  height: 0px;
+  border-right: 10px solid #0f33ff;
+  border-left: 0;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
 }
 
 .careerButton {

@@ -13,13 +13,7 @@ const aboutLink = document.getElementById("03_sideNav");
 const contactLink = document.getElementById("04_sideNav");
 const hireUsLink = document.getElementById("05_sideNav");
 
-const allSections = [
-  homeSection,
-  worksSection,
-  aboutSection,
-  contactSection,
-  hireUsSection,
-];
+const allSections = [homeSection, worksSection, aboutSection, contactSection, hireUsSection];
 const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
 
 function getSectionIndexFromID(id) {
@@ -29,12 +23,12 @@ function getSectionIndexFromID(id) {
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
 
-  allSections.forEach((section) => {
+  allSections.forEach(section => {
     section.style.display = "none";
   });
   homeSection.style.display = "block";
 
-  allLinks.forEach((link) => {
+  allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   homeLink.classList.add("sideNavigation__link--active");
@@ -43,12 +37,12 @@ function showHomeSection() {
 function showWorksSection() {
   hireUsNavbutton.style.display = "block";
 
-  allSections.forEach((section) => {
+  allSections.forEach(section => {
     section.style.display = "none";
   });
   worksSection.style.display = "block";
 
-  allLinks.forEach((link) => {
+  allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   worksLink.classList.add("sideNavigation__link--active");
@@ -57,12 +51,12 @@ function showWorksSection() {
 function showAboutSection() {
   hireUsNavbutton.style.display = "block";
 
-  allSections.forEach((section) => {
+  allSections.forEach(section => {
     section.style.display = "none";
   });
   aboutSection.style.display = "block";
 
-  allLinks.forEach((link) => {
+  allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   aboutLink.classList.add("sideNavigation__link--active");
@@ -71,12 +65,12 @@ function showAboutSection() {
 function showContactSection() {
   hireUsNavbutton.style.display = "block";
 
-  allSections.forEach((section) => {
+  allSections.forEach(section => {
     section.style.display = "none";
   });
   contactSection.style.display = "block";
 
-  allLinks.forEach((link) => {
+  allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   contactLink.classList.add("sideNavigation__link--active");
@@ -85,12 +79,12 @@ function showContactSection() {
 function showHireUsSection() {
   hireUsNavbutton.style.display = "none";
 
-  allSections.forEach((section) => {
+  allSections.forEach(section => {
     section.style.display = "none";
   });
   hireUsSection.style.display = "block";
 
-  allLinks.forEach((link) => {
+  allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   hireUsLink.classList.add("sideNavigation__link--active");
@@ -125,9 +119,9 @@ function changeActiveSection(e) {
   }
 }
 
-navButtons.forEach((button) => {
-  button.addEventListener("click", (e) => changeActiveSection(e), true);
+navButtons.forEach(button => {
+  button.addEventListener("click", e => changeActiveSection(e), true);
   const buttonIndex = getSectionIndexFromID(button.id);
 });
 
-showWorksSection();
+showAboutSection();
