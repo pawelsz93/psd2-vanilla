@@ -4,6 +4,7 @@
   &__motto {
     position: relative;
     font-size: $font-medium;
+    font-weight: 900;
 
     .span {
       &--in {
@@ -11,7 +12,7 @@
           content: "";
           position: absolute;
           top: 62px;
-          left: 169px;
+          left: 228px;
           width: 26px;
           height: 26px;
           border-radius: 13px;
@@ -25,8 +26,8 @@
         &::after {
           content: "";
           position: absolute;
-          top: 231px;
-          left: 159px;
+          top: 246px;
+          left: 210px;
           width: 9px;
           height: 9px;
           background-color: $blue-color;
@@ -39,19 +40,19 @@
       content: "";
       position: absolute;
       top: 50px;
-      left: 250px;
+      left: 290px;
       width: $decoration-size;
       height: $decoration-size;
       transform: rotate(45deg);
       background-color: $blue-color;
     }
 
-    //rotated square decoration
+    //rotated triangle decoration
     &::before {
       content: "";
       position: absolute;
       top: 0px;
-      left: 130px;
+      left: 160px;
       width: 0px;
       height: 0px;
       border-right: $decoration-size solid $blue-color;
@@ -64,20 +65,75 @@
 }
 
 .careerButton {
-  padding: 5px 5px;
-  font-size: 16px;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-size: 700;
   text-decoration: none;
   text-transform: uppercase;
   color: $font-color;
   word-spacing: 5px;
 
-  & img {
-    height: 10px;
-    line-height: 10px;
-    vertical-align: middle;
+  &__arrow {
+    height: 12px;
+    padding-left: 5px;
+    transition: 0.2s;
+  }
+
+  &:hover {
+    & img {
+      transform: translateX(5px);
+    }
   }
 }
 
 .aboutButtons {
-  display: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 10px;
+  grid-template-areas:
+    "pic1 pic2 pic3"
+    "pic1Title pic2Title pic3Title";
+  text-transform: uppercase;
+
+  & * {
+    cursor: pointer;
+  }
+
+  &__pic1 {
+    grid-area: pic1;
+  }
+  &__pic1Title {
+    grid-area: pic1Title;
+  }
+
+  &__pic2 {
+    grid-area: pic2;
+  }
+  &__pic2Title {
+    grid-area: pic2Title;
+  }
+
+  &__pic3 {
+    grid-area: pic3;
+  }
+
+  &__pic3Title {
+    grid-area: pic3Title;
+  }
+}
+
+.aboutButtonImg {
+  &:hover + .aboutButtonTitle {
+    transform: translate(20px, 0px);
+  }
+}
+
+.aboutButtonTitle {
+  transform: translate(20px, -10px);
+  transition: 0.2s;
+
+  &:hover {
+    transform: translate(20px, 0px);
+  }
 }

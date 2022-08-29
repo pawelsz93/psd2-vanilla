@@ -6,12 +6,10 @@ $text-vertical-margin: 20px;
   width: 70vw;
   height: 70vh;
   flex-grow: 1;
-  margin-right: 5vw;
 
   &__title {
     font-size: 30px;
     text-align: center;
-    padding-top: 100px;
     font-family: $font-family;
   }
 }
@@ -19,7 +17,7 @@ $text-vertical-margin: 20px;
 .caruzela {
   position: relative;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 
   &__nextButton {
