@@ -6,14 +6,15 @@
     position: absolute;
     top: -20vh;
     left: -20vw;
-    width: 110vw;
+    min-height: 100vh;
+    min-width: 100vw;
     z-index: -1;
   }
 
   &__contactInfo {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
   }
 }
 
@@ -45,7 +46,9 @@
     }
   }
 
-  .button {
+  .contactButton {
+    text-align: center;
+
     &--lightBlue {
       background-color: $light-blue-color;
     }

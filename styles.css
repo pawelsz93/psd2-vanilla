@@ -528,14 +528,15 @@
   position: absolute;
   top: -20vh;
   left: -20vw;
-  width: 110vw;
+  min-height: 100vh;
+  min-width: 100vw;
   z-index: -1;
 }
 
 .contactSection__contactInfo {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 
 .contactInfo {
@@ -576,11 +577,15 @@
   border: 2px solid #0c0c0c;
 }
 
-.contactInfo .button--lightBlue {
+.contactInfo .contactButton {
+  text-align: center;
+}
+
+.contactInfo .contactButton--lightBlue {
   background-color: #1769ff;
 }
 
-.contactInfo .button--pink {
+.contactInfo .contactButton--pink {
   background-color: #ea4c89;
 }
 
