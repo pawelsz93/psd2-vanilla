@@ -124,4 +124,4 @@ navButtons.forEach(button => {
   const buttonIndex = getSectionIndexFromID(button.id);
 });
 
-showContactSection();
+showHireUsSection();

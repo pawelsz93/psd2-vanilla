@@ -1,0 +1,100 @@
+.hireUsSection {
+  &__title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+}
+
+.hireUsForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 100px 100px;
+  // grid-template-areas: "a a
+  //                       b c
+  //                       d d";
+
+  &__taskList {
+    // grid-area: a;
+    grid-area: 1 / 1 / 2 / 3;
+    // background-color: rgb(160, 94, 94);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 50px;
+  }
+
+  &__li {
+    margin: 10px auto;
+  }
+
+  &__textInputWrapper1 {
+    // grid-area: b;
+    grid-area: 2 / 1 / 3 / 2;
+    // background-color: rgb(105, 160, 94);
+  }
+  &__textInputWrapper2 {
+    // background-color: rgb(94, 109, 160);
+    // grid-area: c;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  &__sendRequestButton {
+    // grid-area: d;
+    grid-area: 3 / 1 / 4 / 3;
+    display: block;
+    margin: auto;
+    // background-color: rgb(100, 15, 36);
+  }
+}
+
+.sendRequestButton {
+  @include blueButtonMixin;
+}
+
+.taskWrapper {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  box-sizing: content-box; // in purpose to make wrapper height equal to label line height
+  list-style: none;
+  border: 2px solid $font-color;
+  text-align: center;
+
+  &__checkbox {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  // default checkbox replaced with div
+  &__checkmark {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__taskName {
+    line-height: 50px;
+  }
+}
+
+.textInputWrapper {
+  position: relative;
+
+  &__textInput {
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $font-color;
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+}

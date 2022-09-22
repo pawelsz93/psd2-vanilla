@@ -117,19 +117,49 @@
           </div>
         </section>
         <section class="hireUsSection" id="hireUsSection" data-index="05">
-          <h2>You want us to do</h2>
-          <form action="">
-            <ul>
-              <li><input type="checkbox" name="" id="" />App Design</li>
-              <li><input type="checkbox" name="" id="" />Graphic Design</li>
-              <li><input type="checkbox" name="" id="" />Motion Design</li>
-              <li><input type="checkbox" name="" id="" />UX Design</li>
-              <li><input type="checkbox" name="" id="" />Webdesign</li>
-              <li><input type="checkbox" name="" id="" />Marketing</li>
+          <h2 class="hireUsSection__title">You want us to do</h2>
+          <form action="" class="hireUsForm">
+            <ul class="hireUsForm__taskList">
+              <li class="hireUsForm__li taskWrapper">
+                <div class="taskWrapper__checkmark"></div>
+                <input type="checkbox" name="" id="appDesignCB" class="taskWrapper__checkbox" />
+                <label class="taskWrapper__taskName" for="appDesignCB">App Design</label>
+              </li>
+              <li class="hireUsForm__li taskWrapper">
+                <div class="taskWrapper__checkmark"></div>
+                <input type="checkbox" name="" id="graphicDesignCB" class="taskWrapper__checkbox" />
+                <label class="taskWrapper__taskName" for="graphicDesignCB">Graphic Design</label>
+              </li>
+              <li class="hireUsForm__li taskWrapper">
+                <div class="taskWrapper__checkmark"></div>
+                <input type="checkbox" name="" id="motionDesignCB" class="taskWrapper__checkbox" />
+                <label class="taskWrapper__taskName" for="motionDesignCB">Motion Design</label>
+              </li>
+              <li class="hireUsForm__li taskWrapper">
+                <div class="taskWrapper__checkmark"></div>
+                <input type="checkbox" name="" id="uxDesignCB" class="taskWrapper__checkbox" />
+                <label for="uxDesignCB" class="taskWrapper__taskName">UX Design</label>
+              </li>
+              <li class="hireUsForm__li taskWrapper">
+                <div class="taskWrapper__checkmark"></div>
+                <input type="checkbox" name="" id="webDesignCB" class="taskWrapper__checkbox" />
+                <label for="webDesignCB" class="taskWrapper__taskName">Webdesign</label>
+              </li>
+              <li class="hireUsForm__li taskWrapper">
+                <div class="taskWrapper__checkmark"></div>
+                <input type="checkbox" name="" id="marketingCB" class="taskWrapper__checkbox" />
+                <label for="marketingCB" class="taskWrapper__taskName">Marketing </label>
+              </li>
             </ul>
-            <input type="text" />
-            <input type="text" />
-            <input type="submit" value="Send request" />
+            <div class="textInputWrapper hireUsForm__textInputWrapper1">
+              <input type="text" class="hireUsForm__textInput textInputWrapper__textInput" />
+              <span class="textInputWrapper__placeholder">Name </span>
+            </div>
+            <div class="textInputWrapper hireUsForm__textInputWrapper2">
+              <input type="text" class="hireUsSection__textInput textInputWrapper__textInput" />
+              <span class="textInputWrapper__placeholder">Email</span>
+            </div>
+            <input type="submit" value="Send request" class="sendRequestButton hireUsForm__sendRequestButton" />
           </form>
         </section>
       </main>
