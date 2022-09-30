@@ -601,14 +601,14 @@
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 300px 100px 100px;
       grid-template-rows: 300px 100px 100px;
+      grid-template-areas: "a a" "b c" "d d";
 }
 
 .hireUsForm__taskList {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: 1 / 1 / 2 / 3;
+  grid-area: a;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[2];
@@ -624,26 +624,21 @@
 
 .hireUsForm__textInputWrapper1 {
   -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: b;
 }
 
 .hireUsForm__textInputWrapper2 {
   -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: c;
 }
 
 .hireUsForm__sendRequestButton {
   -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: 3 / 1 / 4 / 3;
+  grid-area: d;
   display: block;
   margin: auto;
 }
@@ -692,6 +687,7 @@
 
 .textInputWrapper__textInput {
   display: block;
+  width: 200px;
   margin: auto;
   background-color: transparent;
   border: none;
@@ -702,8 +698,8 @@
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
   z-index: -1;
 }
 
