@@ -692,15 +692,24 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #fff;
+  outline: none;
+}
+
+.textInputWrapper__textInput:focus + .textInputWrapper__placeholder {
+  top: -24px;
+  font-size: 12px;
 }
 
 .textInputWrapper__placeholder {
   position: absolute;
-  top: 0;
+  top: -14px;
   left: 50%;
+  z-index: -1;
+  font-size: 24px;
   -webkit-transform: translateX(-100px);
           transform: translateX(-100px);
-  z-index: -1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 * {
