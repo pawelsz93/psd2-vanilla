@@ -1,5 +1,6 @@
 const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
 const hireUsNavbutton = document.querySelector("header .hireUsButton");
+const hireUsTaskWrappers = [...document.querySelectorAll(".taskWrapper")];
 
 const homeSection = document.getElementById("homeSection");
 const worksSection = document.getElementById("worksSection");
@@ -119,9 +120,18 @@ function changeActiveSection(e) {
   }
 }
 
+const toggleTaskCheckbox = taskWrapper => {
+  const taskCheckbox = taskWrapper.querySelector(".taskWrapper__checkbox");
+  taskCheckbox.checked = !taskCheckbox.checked;
+};
+
 navButtons.forEach(button => {
   button.addEventListener("click", e => changeActiveSection(e), true);
   const buttonIndex = getSectionIndexFromID(button.id);
+});
+
+hireUsTaskWrappers.forEach(taskWrapper => {
+  taskWrapper.addEventListener("click", () => toggleTaskCheckbox(taskWrapper));
 });
 
 showHireUsSection();

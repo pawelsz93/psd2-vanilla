@@ -1,3 +1,5 @@
 - marker do li ustawić żeby był w tej samej odległości co border
 - jeśli element pojawia się i znika za pomcą display to animację trzeba zrobić za pomoca opacity i keyframes bo samo transition nie zadziała
 - strzałka wewnątrz <a> jako img 
+- W input checkbox miał pojawiać się checkmark obok tekstu i jednocześnie się animować. Transition nie działało jak wcześniej było display: none. 
+Trzeba zrobić znikanie np. opacity lub scale, a żeby pojawiał się i był wyśrodkowany wspólnie z tekstem zmieniać display z absolute na static.
