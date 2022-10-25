@@ -90,7 +90,7 @@
 
 .upperPart {
   position: relative;
-  overflow: hidden;
+  padding-left: 10px;
   border-bottom: 2px solid;
   border-bottom-color: #333;
 }
@@ -98,20 +98,33 @@
 .upperPart__cosmonautImg {
   position: absolute;
   right: 0px;
-  top: 0px;
+  bottom: 0px;
   z-index: -1;
+}
+
+.upperPart::before {
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+  width: 30px;
+  height: 4px;
+  background-color: #0f33ff;
+  content: "";
 }
 
 .bottomPart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 10px;
+  gap: 25px;
 }
 
 .bottomPart__element {
-  margin: 20px 30px;
   opacity: 0.2;
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .bottomPart__element:hover {
@@ -368,7 +381,15 @@
 }
 
 .aboutSection {
+  position: relative;
   color: #fff;
+}
+
+.aboutSection__sithImage {
+  position: absolute;
+  top: -100px;
+  right: 0;
+  z-index: -1;
 }
 
 .aboutSection__motto {
@@ -522,6 +543,7 @@
 
 .contactSection {
   position: relative;
+  background-image: url("./images/krakow map.png");
 }
 
 .contactSection__mapImage {
@@ -531,6 +553,16 @@
   min-height: 100vh;
   min-width: 100vw;
   z-index: -1;
+}
+
+.contactSection__mapImage::after {
+  position: absolute;
+  top: 500px;
+  left: 500px;
+  width: 200px;
+  height: 200px;
+  background-color: #0f33ff;
+  content: "";
 }
 
 .contactSection__contactInfo {
@@ -676,8 +708,8 @@
 }
 
 .taskWrapper__checkbox + .taskWrapper__taskName .checkedSymbol svg {
-  -webkit-transform: scale(5%);
-          transform: scale(5%);
+  -webkit-transform: scale(0%);
+          transform: scale(0%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }

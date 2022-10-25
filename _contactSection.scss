@@ -1,5 +1,6 @@
 .contactSection {
   position: relative;
+  background-image: url("./images/krakow\ map.png"); //nie działa bo kontener nie zajmuje miejsca
   // background-color: rgb(75, 21, 21);
 
   &__mapImage {
@@ -9,6 +10,16 @@
     min-height: 100vh;
     min-width: 100vw;
     z-index: -1;
+
+    &::after {
+      position: absolute;
+      top: 500px;
+      left: 500px;
+      width: 200px;
+      height: 200px;
+      background-color: $blue-color;
+      content: "";
+    }
   }
 
   &__contactInfo {

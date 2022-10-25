@@ -134,4 +134,4 @@ hireUsTaskWrappers.forEach(taskWrapper => {
   taskWrapper.addEventListener("click", () => toggleTaskCheckbox(taskWrapper));
 });
 
-showHireUsSection();
+showContactSection();

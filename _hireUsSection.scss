@@ -63,17 +63,15 @@
     opacity: 0;
 
     & + .taskWrapper__taskName .checkedSymbol {
-      // display: none;
       position: absolute;
       color: $font-color;
       & svg {
-        transform: scale(5%);
+        transform: scale(0%);
         transition: all 0.3s;
       }
     }
 
     &:checked + .taskWrapper__taskName .checkedSymbol {
-      // display: inline-block;
       position: static;
       & svg {
         transform: scale(100%);

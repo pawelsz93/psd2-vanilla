@@ -3,6 +3,7 @@
   color: $font-color;
   font-family: $font-family;
   width: 70vw;
+
   &__up {
     height: 50vh;
   }
@@ -10,23 +11,38 @@
 
 .upperPart {
   position: relative;
-  overflow: hidden;
+  padding-left: 10px;
   border-bottom: 2px solid;
   border-bottom-color: $font-color-dark;
+
   &__cosmonautImg {
     position: absolute;
     right: 0px;
-    top: 0px;
+    bottom: 0px;
     z-index: -1;
+  }
+
+  &::before {
+    position: absolute;
+    bottom: -4px;
+    left: 10px;
+    width: 30px;
+    height: 4px;
+    background-color: $blue-color;
+    content: "";
   }
 }
 
 .bottomPart {
   display: flex;
+  padding-left: 10px;
+  gap: 25px;
+
   &__element {
-    margin: 20px 30px;
     opacity: 0.2;
     cursor: pointer;
+    transition: 0.2s;
+
     &:hover {
       opacity: 1;
     }
