@@ -1,6 +1,8 @@
 const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
 const hireUsNavbutton = document.querySelector("header .hireUsButton");
 const hireUsTaskWrappers = [...document.querySelectorAll(".taskWrapper")];
+const toggleBigMenuButton = document.querySelector(".header__hamburgerWrapper");
+const pageWrapper = document.querySelector(".wrapper");
 
 const homeSection = document.getElementById("homeSection");
 const worksSection = document.getElementById("worksSection");
@@ -120,6 +122,11 @@ function changeActiveSection(e) {
   }
 }
 
+function toggleBigMenu() {
+  console.log("zmien menu");
+  pageWrapper.classList.toggle("wrapper--minimalized");
+}
+
 const toggleTaskCheckbox = taskWrapper => {
   const taskCheckbox = taskWrapper.querySelector(".taskWrapper__checkbox");
   taskCheckbox.checked = !taskCheckbox.checked;
@@ -133,5 +140,7 @@ navButtons.forEach(button => {
 hireUsTaskWrappers.forEach(taskWrapper => {
   taskWrapper.addEventListener("click", () => toggleTaskCheckbox(taskWrapper));
 });
+
+toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
 
 showContactSection();

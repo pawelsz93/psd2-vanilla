@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   width: 100%;
   height: 100px;
@@ -42,8 +43,10 @@
 
 .header__hamburgerWrapper {
   margin-left: auto;
-  padding: 5px 10px;
   height: 24px;
+  width: 32px;
+  padding-left: 8px;
+  padding-right: 4px;
   cursor: pointer;
 }
 
@@ -226,11 +229,18 @@
 
 .sideNavigation__listItem {
   margin-left: 8px;
+  -webkit-transform: translateX(2px);
+          transform: translateX(2px);
 }
 
 .sideNavigation__listItem::marker {
+  content: "■";
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 5px;
+  position: outside;
   color: #fff;
-  font-size: 10px;
+  line-height: 5;
 }
 
 .sideNavigation__link {
@@ -543,32 +553,28 @@
 
 .contactSection {
   position: relative;
-  background-image: url("./images/krakow map.png");
-}
-
-.contactSection__mapImage {
-  position: absolute;
-  top: -20vh;
-  left: -20vw;
-  min-height: 100vh;
-  min-width: 100vw;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
 
-.contactSection__mapImage::after {
-  position: absolute;
-  top: 500px;
-  left: 500px;
-  width: 200px;
-  height: 200px;
-  background-color: #0f33ff;
+.contactSection::before {
   content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/krakow map.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .contactSection__contactInfo {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
 }
 
 .contactInfo {
@@ -795,6 +801,14 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.wrapper--minimalized {
+  border: 5px solid #0f33ff;
+  -webkit-transform-origin: left 50%;
+          transform-origin: left 50%;
+  -webkit-transform: translate(-200px, -100px) translateZ(-500px) scale(60%) rotateY(40deg);
+          transform: translate(-200px, -100px) translateZ(-500px) scale(60%) rotateY(40deg);
 }
 
 main {

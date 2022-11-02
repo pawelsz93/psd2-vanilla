@@ -15,15 +15,21 @@
   flex-direction: column;
   justify-content: space-around;
   list-style-type: square;
-  // list-style-position: inside;
 
   &__listItem {
     margin-left: 8px;
-    // background-color: rgb(113, 198, 113);
+    transform: translateX(2px);
 
     &::marker {
+      // ustawić content na mniejszy element
+      // marginesy na minusie?
+      content: "■";
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 5px;
+      position: outside;
       color: $font-color;
-      font-size: 10px;
+      line-height: 5;
     }
   }
 

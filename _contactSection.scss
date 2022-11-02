@@ -1,31 +1,26 @@
 .contactSection {
   position: relative;
-  background-image: url("./images/krakow\ map.png"); //nie działa bo kontener nie zajmuje miejsca
-  // background-color: rgb(75, 21, 21);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 
-  &__mapImage {
-    position: absolute;
-    top: -20vh;
-    left: -20vw;
-    min-height: 100vh;
-    min-width: 100vw;
-    z-index: -1;
-
-    &::after {
-      position: absolute;
-      top: 500px;
-      left: 500px;
-      width: 200px;
-      height: 200px;
-      background-color: $blue-color;
-      content: "";
-    }
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/krakow\ map.png");
+    background-size: cover;
+    background-position: center;
   }
 
   &__contactInfo {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1;
   }
 }
 
@@ -66,8 +61,6 @@
 
     &--pink {
       background-color: $pink-color;
-    }
-    &--blue {
     }
   }
 }

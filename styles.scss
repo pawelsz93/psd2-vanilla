@@ -27,6 +27,12 @@ body {
   margin: 0 5vw;
   display: flex;
   flex-wrap: wrap;
+
+  &--minimalized {
+    border: 5px solid $blue-color;
+    transform-origin: left 50%;
+    transform: translate(-200px, -100px) translateZ(-500px) scale(60%) rotateY(40deg);
+  }
 }
 
 main {
