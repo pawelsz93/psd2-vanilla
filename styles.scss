@@ -20,6 +20,7 @@
 body {
   margin: 0;
   background-color: $color-background;
+  perspective: 800px;
 }
 
 .wrapper {
@@ -27,11 +28,12 @@ body {
   margin: 0 5vw;
   display: flex;
   flex-wrap: wrap;
+  transition: 0.3s;
 
   &--minimalized {
     border: 5px solid $blue-color;
-    transform-origin: left 50%;
-    transform: translate(-200px, -100px) translateZ(-500px) scale(60%) rotateY(40deg);
+    transform-origin: 0% 50%;
+    transform: rotateY(30deg);
   }
 }
 

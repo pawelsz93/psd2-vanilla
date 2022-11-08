@@ -716,8 +716,8 @@
 .taskWrapper__checkbox + .taskWrapper__taskName .checkedSymbol svg {
   -webkit-transform: scale(0%);
           transform: scale(0%);
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .taskWrapper__checkbox:checked + .taskWrapper__taskName .checkedSymbol {
@@ -791,6 +791,8 @@
 body {
   margin: 0;
   background-color: #0c0c0c;
+  -webkit-perspective: 800px;
+          perspective: 800px;
 }
 
 .wrapper {
@@ -801,14 +803,16 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .wrapper--minimalized {
   border: 5px solid #0f33ff;
-  -webkit-transform-origin: left 50%;
-          transform-origin: left 50%;
-  -webkit-transform: translate(-200px, -100px) translateZ(-500px) scale(60%) rotateY(40deg);
-          transform: translate(-200px, -100px) translateZ(-500px) scale(60%) rotateY(40deg);
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-transform: rotateY(30deg);
+          transform: rotateY(30deg);
 }
 
 main {

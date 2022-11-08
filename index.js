@@ -19,9 +19,17 @@ const hireUsLink = document.getElementById("05_sideNav");
 const allSections = [homeSection, worksSection, aboutSection, contactSection, hireUsSection];
 const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
 
+let activeSectionIndex = 0;
+
 function getSectionIndexFromID(id) {
-  return id.slice(0, 2);
+  const index = Number(id.slice(0, 2));
+  console.log(index);
+  return index;
 }
+
+function animateScrollUp() {}
+
+function animateScrollDown() {}
 
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
@@ -93,32 +101,59 @@ function showHireUsSection() {
   hireUsLink.classList.add("sideNavigation__link--active");
 }
 
-function changeActiveSection(e) {
-  const { id } = e.target;
-  const clickedSectionIndex = getSectionIndexFromID(id);
-  switch (clickedSectionIndex) {
-    case "01":
+function changeActiveSection(e, sectionIndex) {
+  if (!sectionIndex) {
+    const { id } = e.target;
+    const clickedSectionIndex = getSectionIndexFromID(id);
+    activeSectionIndex = clickedSectionIndex;
+  } else {
+    activeSectionIndex = sectionIndex;
+  }
+  console.log(activeSectionIndex);
+  switch (activeSectionIndex) {
+    case 1:
       showHomeSection();
       break;
 
-    case "02":
+    case 2:
       showWorksSection();
       break;
 
-    case "03":
+    case 3:
       showAboutSection();
       break;
 
-    case "04":
+    case 4:
       showContactSection();
       break;
 
-    case "05":
+    case 5:
       showHireUsSection();
       break;
 
     default:
+      console.log("błędny numer");
       break;
+  }
+}
+
+function changeSectionOnScroll(e) {
+  //funkcja debounce
+  if (e.deltaY > 0) {
+    if (activeSectionIndex < 5) {
+      activeSectionIndex++;
+    }
+    animateScrollUp();
+    changeActiveSection(e, activeSectionIndex);
+    console.log(activeSectionIndex);
+  } else {
+    if (activeSectionIndex > 1) {
+      activeSectionIndex--;
+    }
+    animateScrollDown();
+
+    changeActiveSection(e, activeSectionIndex);
+    console.log(activeSectionIndex);
   }
 }
 
@@ -134,7 +169,6 @@ const toggleTaskCheckbox = taskWrapper => {
 
 navButtons.forEach(button => {
   button.addEventListener("click", e => changeActiveSection(e), true);
-  const buttonIndex = getSectionIndexFromID(button.id);
 });
 
 hireUsTaskWrappers.forEach(taskWrapper => {
@@ -142,5 +176,7 @@ hireUsTaskWrappers.forEach(taskWrapper => {
 });
 
 toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
+
+window.addEventListener("wheel", e => changeSectionOnScroll(e));
 
 showContactSection();
