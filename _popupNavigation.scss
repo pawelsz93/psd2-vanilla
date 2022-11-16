@@ -1,0 +1,6 @@
+.popupNavigation {
+  display: none;
+  &--opened {
+    display: block;
+  }
+}

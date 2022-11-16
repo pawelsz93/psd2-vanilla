@@ -15,21 +15,18 @@
   flex-direction: column;
   justify-content: space-around;
   list-style-type: square;
+  list-style-position: outside;
 
   &__listItem {
     margin-left: 8px;
-    transform: translateX(2px);
 
     &::marker {
-      // ustawić content na mniejszy element
-      // marginesy na minusie?
-      content: "■";
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 5px;
-      position: outside;
+      font-size: 6px;
       color: $font-color;
-      line-height: 5;
+
+      &--active {
+        color: $blue-color;
+      }
     }
   }
 
@@ -44,21 +41,22 @@
     }
 
     &--active span {
-      line-height: 30px;
-      display: inline;
+      display: inline-block;
       padding-left: 20px;
       animation: fadeIn 0.8s;
+      transform: translateY($nav-text-translate); //y wyśrodkować nazwę po prawej względem markera
     }
 
     &::before {
-      line-height: 30px;
+      display: inline-block;
       content: attr(data-index);
+      transform: translateY($nav-text-translate); //y wyśrodkować numer po prawej względem markera
     }
 
     &--active::before {
-      display: block;
+      display: inline-block;
       position: absolute;
-      transform: translateX(-45px);
+      transform: translateX(-45px) translateY($nav-text-translate); //y wyśrodkować numer po lewej względem markera
     }
   }
 }

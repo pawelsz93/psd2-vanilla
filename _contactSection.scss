@@ -3,6 +3,13 @@
   width: 100%;
   height: 100%;
   z-index: -1;
+  opacity: 1;
+  transition: 0.5s;
+
+  &--scrolledUp {
+    opacity: 0;
+    transition: 0.5s;
+  }
 
   &::before {
     content: "";
@@ -40,6 +47,7 @@
     list-style: none;
     text-decoration: none;
   }
+
   li {
     background-color: $blue-color;
     margin-bottom: 20px;

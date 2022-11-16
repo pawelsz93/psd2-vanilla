@@ -2,7 +2,8 @@ const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
 const hireUsNavbutton = document.querySelector("header .hireUsButton");
 const hireUsTaskWrappers = [...document.querySelectorAll(".taskWrapper")];
 const toggleBigMenuButton = document.querySelector(".header__hamburgerWrapper");
-const pageWrapper = document.querySelector(".wrapper");
+const pageWrapper = document.querySelector(".mainPage");
+const popupNavigation = document.querySelector(".popupNavigation");
 
 const homeSection = document.getElementById("homeSection");
 const worksSection = document.getElementById("worksSection");
@@ -19,17 +20,43 @@ const hireUsLink = document.getElementById("05_sideNav");
 const allSections = [homeSection, worksSection, aboutSection, contactSection, hireUsSection];
 const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
 
-let activeSectionIndex = 0;
+let activeSectionIndex = 2;
 
 function getSectionIndexFromID(id) {
   const index = Number(id.slice(0, 2));
-  console.log(index);
   return index;
 }
 
-function animateScrollUp() {}
+function getActiveSection(index) {
+  switch (index) {
+    case 1:
+      return homeSection;
+      break;
+    case 2:
+      return worksSection;
+      break;
+    case 3:
+      return aboutSection;
+      break;
+    case 4:
+      return contactSection;
+      break;
+    case 5:
+      return hireUsSection;
+      break;
 
-function animateScrollDown() {}
+    default:
+      break;
+  }
+}
+
+function animateScroll(prevSection) {
+  prevSection.classList.add("contactSection--scrolledUp");
+}
+
+// function animateScrollDown() {
+//   worksSection.classList.toggle(".contactSection--scrolledUp");
+// }
 
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
@@ -85,6 +112,7 @@ function showContactSection() {
     link.classList.remove("sideNavigation__link--active");
   });
   contactLink.classList.add("sideNavigation__link--active");
+  setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "500");
 }
 
 function showHireUsSection() {
@@ -102,6 +130,8 @@ function showHireUsSection() {
 }
 
 function changeActiveSection(e, sectionIndex) {
+  const prevSection = getActiveSection(activeSectionIndex);
+
   if (!sectionIndex) {
     const { id } = e.target;
     const clickedSectionIndex = getSectionIndexFromID(id);
@@ -109,26 +139,33 @@ function changeActiveSection(e, sectionIndex) {
   } else {
     activeSectionIndex = sectionIndex;
   }
-  console.log(activeSectionIndex);
+
   switch (activeSectionIndex) {
     case 1:
+      // animateScroll(homeSection);
+      // setTimeout(() => showHomeSection(), "500");
       showHomeSection();
       break;
 
     case 2:
-      showWorksSection();
+      animateScroll(contactSection);
+      setTimeout(() => showWorksSection(), "500");
+      // showWorksSection();
       break;
 
     case 3:
-      showAboutSection();
+      animateScroll(contactSection);
+      setTimeout(() => showAboutSection(), "500");
       break;
 
     case 4:
-      showContactSection();
+      animateScroll(contactSection);
+      setTimeout(() => showContactSection(), "500");
       break;
 
     case 5:
-      showHireUsSection();
+      animateScroll(contactSection);
+      setTimeout(() => showHireUsSection(), "500");
       break;
 
     default:
@@ -143,23 +180,20 @@ function changeSectionOnScroll(e) {
     if (activeSectionIndex < 5) {
       activeSectionIndex++;
     }
-    animateScrollUp();
     changeActiveSection(e, activeSectionIndex);
-    console.log(activeSectionIndex);
   } else {
     if (activeSectionIndex > 1) {
       activeSectionIndex--;
     }
-    animateScrollDown();
 
     changeActiveSection(e, activeSectionIndex);
-    console.log(activeSectionIndex);
   }
 }
 
 function toggleBigMenu() {
   console.log("zmien menu");
-  pageWrapper.classList.toggle("wrapper--minimalized");
+  pageWrapper.classList.toggle("mainPage--minimalized");
+  popupNavigation.classList.toggle("popupNavigation--opened");
 }
 
 const toggleTaskCheckbox = taskWrapper => {
@@ -179,4 +213,4 @@ toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
 
 window.addEventListener("wheel", e => changeSectionOnScroll(e));
 
-showContactSection();
+showWorksSection();

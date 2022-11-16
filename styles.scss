@@ -8,6 +8,7 @@
 @import "aboutSection";
 @import "contactSection";
 @import "hireUsSection";
+@import "popupNavigation";
 
 * {
   box-sizing: border-box;
@@ -23,11 +24,7 @@ body {
   perspective: 800px;
 }
 
-.wrapper {
-  max-width: 1700px;
-  margin: 0 5vw;
-  display: flex;
-  flex-wrap: wrap;
+.mainPage {
   transition: 0.3s;
 
   &--minimalized {
@@ -35,6 +32,13 @@ body {
     transform-origin: 0% 50%;
     transform: rotateY(30deg);
   }
+}
+
+.wrapper {
+  max-width: 1700px;
+  margin: 0 5vw;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 main {
