@@ -1,11 +1,16 @@
 $text-vertical-margin: 20px;
 
 .workCaruzelaSection {
-  // background-color: rgb(97, 207, 97);
   color: $font-color;
   width: 70vw;
   height: 70vh;
   flex-grow: 1;
+  opacity: 1;
+  transition: 0.5s;
+
+  &--scrolledUp {
+    opacity: 0;
+  }
 
   &__title {
     font-size: 30px;

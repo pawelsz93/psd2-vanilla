@@ -1,4 +1,11 @@
 .hireUsSection {
+  opacity: 1;
+  transition: 0.5s;
+
+  &--scrolledUp {
+    opacity: 0;
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 50px;

@@ -3,6 +3,12 @@
   color: $font-color;
   font-family: $font-family;
   width: 70vw;
+  opacity: 1;
+  transition: 0.5s;
+
+  &--scrolledUp {
+    opacity: 0;
+  }
 
   &__up {
     height: 50vh;

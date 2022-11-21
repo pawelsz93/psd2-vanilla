@@ -51,12 +51,8 @@ function getActiveSection(index) {
 }
 
 function animateScroll(prevSection) {
-  prevSection.classList.add("contactSection--scrolledUp");
+  prevSection.classList.add(`${prevSection.classList[0]}--scrolledUp`);
 }
-
-// function animateScrollDown() {
-//   worksSection.classList.toggle(".contactSection--scrolledUp");
-// }
 
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
@@ -70,6 +66,8 @@ function showHomeSection() {
     link.classList.remove("sideNavigation__link--active");
   });
   homeLink.classList.add("sideNavigation__link--active");
+
+  setTimeout(() => homeSection.classList.remove("homeSection--scrolledUp"), "10");
 }
 
 function showWorksSection() {
@@ -84,6 +82,8 @@ function showWorksSection() {
     link.classList.remove("sideNavigation__link--active");
   });
   worksLink.classList.add("sideNavigation__link--active");
+
+  setTimeout(() => worksSection.classList.remove("workCaruzelaSection--scrolledUp"), "10");
 }
 
 function showAboutSection() {
@@ -98,6 +98,8 @@ function showAboutSection() {
     link.classList.remove("sideNavigation__link--active");
   });
   aboutLink.classList.add("sideNavigation__link--active");
+
+  setTimeout(() => aboutSection.classList.remove("aboutSection--scrolledUp"), "10");
 }
 
 function showContactSection() {
@@ -112,7 +114,8 @@ function showContactSection() {
     link.classList.remove("sideNavigation__link--active");
   });
   contactLink.classList.add("sideNavigation__link--active");
-  setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "500");
+
+  setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "10");
 }
 
 function showHireUsSection() {
@@ -127,6 +130,8 @@ function showHireUsSection() {
     link.classList.remove("sideNavigation__link--active");
   });
   hireUsLink.classList.add("sideNavigation__link--active");
+
+  setTimeout(() => hireUsSection.classList.remove("hireUsSection--scrolledUp"), "10");
 }
 
 function changeActiveSection(e, sectionIndex) {
@@ -142,30 +147,28 @@ function changeActiveSection(e, sectionIndex) {
 
   switch (activeSectionIndex) {
     case 1:
-      // animateScroll(homeSection);
-      // setTimeout(() => showHomeSection(), "500");
-      showHomeSection();
+      animateScroll(prevSection);
+      setTimeout(() => showHomeSection(), "510");
       break;
 
     case 2:
-      animateScroll(contactSection);
-      setTimeout(() => showWorksSection(), "500");
-      // showWorksSection();
+      animateScroll(prevSection);
+      setTimeout(() => showWorksSection(), "510");
       break;
 
     case 3:
-      animateScroll(contactSection);
-      setTimeout(() => showAboutSection(), "500");
+      animateScroll(prevSection);
+      setTimeout(() => showAboutSection(), "510");
       break;
 
     case 4:
-      animateScroll(contactSection);
-      setTimeout(() => showContactSection(), "500");
+      animateScroll(prevSection);
+      setTimeout(() => showContactSection(), "510");
       break;
 
     case 5:
-      animateScroll(contactSection);
-      setTimeout(() => showHireUsSection(), "500");
+      animateScroll(prevSection);
+      setTimeout(() => showHireUsSection(), "510");
       break;
 
     default:
@@ -191,7 +194,6 @@ function changeSectionOnScroll(e) {
 }
 
 function toggleBigMenu() {
-  console.log("zmien menu");
   pageWrapper.classList.toggle("mainPage--minimalized");
   popupNavigation.classList.toggle("popupNavigation--opened");
 }

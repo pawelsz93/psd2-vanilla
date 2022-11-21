@@ -1,6 +1,12 @@
 .aboutSection {
   position: relative;
   color: $font-color;
+  opacity: 1;
+  transition: 0.5s;
+
+  &--scrolledUp {
+    opacity: 0;
+  }
 
   &__sithImage {
     position: absolute;
