@@ -3,3 +3,4 @@
 - strzałka wewnątrz <a> jako img 
 - W input checkbox miał pojawiać się checkmark obok tekstu i jednocześnie się animować. Transition nie działało jak wcześniej było display: none. 
 Trzeba zrobić znikanie np. opacity lub scale, a żeby pojawiał się i był wyśrodkowany wspólnie z tekstem zmieniać display z absolute na static.
+- nie da się żeby marker był idealnie na borderze bo jest inside lub outside, jeśli ma być na lini trzeba zrobić ją pseudo elementem

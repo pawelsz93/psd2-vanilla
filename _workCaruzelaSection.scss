@@ -1,15 +1,17 @@
 $text-vertical-margin: 20px;
 
 .workCaruzelaSection {
+  position: absolute;
   color: $font-color;
   width: 70vw;
   height: 70vh;
   flex-grow: 1;
   opacity: 1;
-  transition: 0.5s;
+  transition: 2s;
 
   &--scrolledUp {
     opacity: 0;
+    visibility: hidden;
   }
 
   &__title {

@@ -1,9 +1,11 @@
 .hireUsSection {
+  position: absolute;
   opacity: 1;
-  transition: 0.5s;
+  transition: 2s;
 
   &--scrolledUp {
     opacity: 0;
+    visibility: hidden;
   }
 
   &__title {

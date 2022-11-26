@@ -10,16 +10,16 @@
 .sideNavigation {
   min-width: 5vw;
   height: 70vh;
-  border-left: 2px solid $font-color-dark;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border-left: 2px solid $font-color-dark;
   list-style-type: square;
-  list-style-position: outside;
+  list-style-position: inside;
+  // padding-left: 20px;
 
   &__listItem {
-    margin-left: 8px;
-
+    // display: block;
     &::marker {
       font-size: 6px;
       color: $font-color;

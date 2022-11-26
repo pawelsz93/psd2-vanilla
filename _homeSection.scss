@@ -1,13 +1,14 @@
 .homeSection {
-  display: none;
+  position: absolute;
   color: $font-color;
   font-family: $font-family;
   width: 70vw;
   opacity: 1;
-  transition: 0.5s;
+  transition: 2s;
 
   &--scrolledUp {
     opacity: 0;
+    visibility: hidden;
   }
 
   &__up {

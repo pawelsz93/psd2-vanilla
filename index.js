@@ -57,81 +57,86 @@ function animateScroll(prevSection) {
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
 
-  allSections.forEach(section => {
-    section.style.display = "none";
-  });
-  homeSection.style.display = "block";
+  // allSections.forEach(section => {
+  //   section.style.display = "none";
+  // });
+  // homeSection.style.display = "block";
 
   allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   homeLink.classList.add("sideNavigation__link--active");
 
-  setTimeout(() => homeSection.classList.remove("homeSection--scrolledUp"), "10");
+  // setTimeout(() => homeSection.classList.remove("homeSection--scrolledUp"), "1");
+  homeSection.classList.remove("homeSection--scrolledUp");
 }
 
 function showWorksSection() {
   hireUsNavbutton.style.display = "block";
 
-  allSections.forEach(section => {
-    section.style.display = "none";
-  });
-  worksSection.style.display = "block";
+  // allSections.forEach(section => {
+  //   section.style.display = "none";
+  // });
+  // worksSection.style.display = "block";
 
   allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   worksLink.classList.add("sideNavigation__link--active");
 
-  setTimeout(() => worksSection.classList.remove("workCaruzelaSection--scrolledUp"), "10");
+  // setTimeout(() => worksSection.classList.remove("workCaruzelaSection--scrolledUp"), "1");
+  worksSection.classList.remove("workCaruzelaSection--scrolledUp");
 }
 
 function showAboutSection() {
   hireUsNavbutton.style.display = "block";
 
-  allSections.forEach(section => {
-    section.style.display = "none";
-  });
-  aboutSection.style.display = "block";
+  // allSections.forEach(section => {
+  //   section.style.display = "none";
+  // });
+  // aboutSection.style.display = "block";
 
   allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   aboutLink.classList.add("sideNavigation__link--active");
 
-  setTimeout(() => aboutSection.classList.remove("aboutSection--scrolledUp"), "10");
+  // setTimeout(() => aboutSection.classList.remove("aboutSection--scrolledUp"), "1");
+  aboutSection.classList.remove("aboutSection--scrolledUp");
 }
 
 function showContactSection() {
   hireUsNavbutton.style.display = "block";
 
-  allSections.forEach(section => {
-    section.style.display = "none";
-  });
-  contactSection.style.display = "block";
+  // allSections.forEach(section => {
+  //   section.style.display = "none";
+  // });
+  // contactSection.style.display = "block";
 
   allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   contactLink.classList.add("sideNavigation__link--active");
 
-  setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "10");
+  // setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "1");
+  contactSection.classList.remove("contactSection--scrolledUp");
 }
 
 function showHireUsSection() {
   hireUsNavbutton.style.display = "none";
 
-  allSections.forEach(section => {
-    section.style.display = "none";
-  });
-  hireUsSection.style.display = "block";
+  // allSections.forEach(section => {
+  //   section.style.display = "none";
+  // });
+  // hireUsSection.style.display = "block";
 
   allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
   hireUsLink.classList.add("sideNavigation__link--active");
 
-  setTimeout(() => hireUsSection.classList.remove("hireUsSection--scrolledUp"), "10");
+  // setTimeout(() => hireUsSection.classList.remove("hireUsSection--scrolledUp"), "1");
+  hireUsSection.classList.remove("hireUsSection--scrolledUp");
 }
 
 function changeActiveSection(e, sectionIndex) {
@@ -148,27 +153,27 @@ function changeActiveSection(e, sectionIndex) {
   switch (activeSectionIndex) {
     case 1:
       animateScroll(prevSection);
-      setTimeout(() => showHomeSection(), "510");
+      setTimeout(() => showHomeSection(), "500");
       break;
 
     case 2:
       animateScroll(prevSection);
-      setTimeout(() => showWorksSection(), "510");
+      setTimeout(() => showWorksSection(), "500");
       break;
 
     case 3:
       animateScroll(prevSection);
-      setTimeout(() => showAboutSection(), "510");
+      setTimeout(() => showAboutSection(), "500");
       break;
 
     case 4:
       animateScroll(prevSection);
-      setTimeout(() => showContactSection(), "510");
+      setTimeout(() => showContactSection(), "500");
       break;
 
     case 5:
       animateScroll(prevSection);
-      setTimeout(() => showHireUsSection(), "510");
+      setTimeout(() => showHireUsSection(), "500");
       break;
 
     default:
