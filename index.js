@@ -54,6 +54,14 @@ function animateScroll(prevSection) {
   prevSection.classList.add(`${prevSection.classList[0]}--scrolledUp`);
 }
 
+function setActiveNavLink(chosenLink) {
+  allLinks.forEach(link => {
+    link.classList.remove("sideNavigation__link--active");
+  });
+  chosenLink.classList.add("sideNavigation__link--active");
+  // console.log(activeSectionIndex);
+}
+
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
 
@@ -62,10 +70,10 @@ function showHomeSection() {
   // });
   // homeSection.style.display = "block";
 
-  allLinks.forEach(link => {
-    link.classList.remove("sideNavigation__link--active");
-  });
-  homeLink.classList.add("sideNavigation__link--active");
+  // allLinks.forEach(link => {
+  //   link.classList.remove("sideNavigation__link--active");
+  // });
+  // homeLink.classList.add("sideNavigation__link--active");
 
   // setTimeout(() => homeSection.classList.remove("homeSection--scrolledUp"), "1");
   homeSection.classList.remove("homeSection--scrolledUp");
@@ -79,10 +87,10 @@ function showWorksSection() {
   // });
   // worksSection.style.display = "block";
 
-  allLinks.forEach(link => {
-    link.classList.remove("sideNavigation__link--active");
-  });
-  worksLink.classList.add("sideNavigation__link--active");
+  // allLinks.forEach(link => {
+  //   link.classList.remove("sideNavigation__link--active");
+  // });
+  // worksLink.classList.add("sideNavigation__link--active");
 
   // setTimeout(() => worksSection.classList.remove("workCaruzelaSection--scrolledUp"), "1");
   worksSection.classList.remove("workCaruzelaSection--scrolledUp");
@@ -96,10 +104,10 @@ function showAboutSection() {
   // });
   // aboutSection.style.display = "block";
 
-  allLinks.forEach(link => {
-    link.classList.remove("sideNavigation__link--active");
-  });
-  aboutLink.classList.add("sideNavigation__link--active");
+  // allLinks.forEach(link => {
+  //   link.classList.remove("sideNavigation__link--active");
+  // });
+  // aboutLink.classList.add("sideNavigation__link--active");
 
   // setTimeout(() => aboutSection.classList.remove("aboutSection--scrolledUp"), "1");
   aboutSection.classList.remove("aboutSection--scrolledUp");
@@ -113,10 +121,10 @@ function showContactSection() {
   // });
   // contactSection.style.display = "block";
 
-  allLinks.forEach(link => {
-    link.classList.remove("sideNavigation__link--active");
-  });
-  contactLink.classList.add("sideNavigation__link--active");
+  // allLinks.forEach(link => {
+  //   link.classList.remove("sideNavigation__link--active");
+  // });
+  // contactLink.classList.add("sideNavigation__link--active");
 
   // setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "1");
   contactSection.classList.remove("contactSection--scrolledUp");
@@ -130,10 +138,10 @@ function showHireUsSection() {
   // });
   // hireUsSection.style.display = "block";
 
-  allLinks.forEach(link => {
-    link.classList.remove("sideNavigation__link--active");
-  });
-  hireUsLink.classList.add("sideNavigation__link--active");
+  // allLinks.forEach(link => {
+  //   link.classList.remove("sideNavigation__link--active");
+  // });
+  // hireUsLink.classList.add("sideNavigation__link--active");
 
   // setTimeout(() => hireUsSection.classList.remove("hireUsSection--scrolledUp"), "1");
   hireUsSection.classList.remove("hireUsSection--scrolledUp");
@@ -145,34 +153,42 @@ function changeActiveSection(e, sectionIndex) {
   if (!sectionIndex) {
     const { id } = e.target;
     const clickedSectionIndex = getSectionIndexFromID(id);
+    if (activeSectionIndex == clickedSectionIndex) return;
     activeSectionIndex = clickedSectionIndex;
   } else {
     activeSectionIndex = sectionIndex;
   }
 
+  console.log(prevSection);
+
   switch (activeSectionIndex) {
     case 1:
       animateScroll(prevSection);
+      setActiveNavLink(homeLink);
       setTimeout(() => showHomeSection(), "500");
       break;
 
     case 2:
       animateScroll(prevSection);
+      setActiveNavLink(worksLink);
       setTimeout(() => showWorksSection(), "500");
       break;
 
     case 3:
       animateScroll(prevSection);
+      setActiveNavLink(aboutLink);
       setTimeout(() => showAboutSection(), "500");
       break;
 
     case 4:
       animateScroll(prevSection);
+      setActiveNavLink(contactLink);
       setTimeout(() => showContactSection(), "500");
       break;
 
     case 5:
       animateScroll(prevSection);
+      setActiveNavLink(hireUsLink);
       setTimeout(() => showHireUsSection(), "500");
       break;
 
@@ -220,4 +236,4 @@ toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
 
 window.addEventListener("wheel", e => changeSectionOnScroll(e));
 
-showWorksSection();
+changeActiveSection(false, 2);
