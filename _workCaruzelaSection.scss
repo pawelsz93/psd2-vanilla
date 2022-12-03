@@ -1,5 +1,21 @@
 $text-vertical-margin: 20px;
 
+.index1 {
+  order: 1;
+}
+.index2 {
+  order: 2;
+}
+.index3 {
+  order: 3;
+}
+.index4 {
+  order: 4;
+}
+.index5 {
+  order: 5;
+}
+
 .workCaruzelaSection {
   position: absolute;
   color: $font-color;
@@ -24,7 +40,6 @@ $text-vertical-margin: 20px;
 .caruzela {
   position: relative;
   display: flex;
-  // justify-content: center;
   align-items: center;
 
   &__nextButton {
@@ -41,11 +56,8 @@ $text-vertical-margin: 20px;
   &__workElement {
     height: 150px;
 
-    // &:nth-child(1) {
-    //   order: -5;
-    // }
-
     &--active {
+      // order: 3;
       height: 300px;
 
       .workElement__img {
@@ -82,20 +94,4 @@ $text-vertical-margin: 20px;
     max-width: 300px;
     margin: $text-vertical-margin 10px;
   }
-}
-
-.index1 {
-  order: 1;
-}
-.index2 {
-  order: 2;
-}
-.index3 {
-  order: 4;
-}
-.index4 {
-  order: 3;
-}
-.index5 {
-  order: 5;
 }

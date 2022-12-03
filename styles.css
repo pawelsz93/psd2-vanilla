@@ -245,6 +245,26 @@
   transform: translateX(-45px) translateY(4px);
 }
 
+.index1 {
+  order: 1;
+}
+
+.index2 {
+  order: 2;
+}
+
+.index3 {
+  order: 3;
+}
+
+.index4 {
+  order: 4;
+}
+
+.index5 {
+  order: 5;
+}
+
 .workCaruzelaSection {
   position: absolute;
   color: #fff;
@@ -312,26 +332,6 @@
   display: none;
   max-width: 300px;
   margin: 20px 10px;
-}
-
-.index1 {
-  order: 1;
-}
-
-.index2 {
-  order: 2;
-}
-
-.index3 {
-  order: 4;
-}
-
-.index4 {
-  order: 3;
-}
-
-.index5 {
-  order: 5;
 }
 
 .aboutSection {

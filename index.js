@@ -1,9 +1,14 @@
-const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
-const hireUsNavbutton = document.querySelector("header .hireUsButton");
+import * as workCaruzelaSection from "./workCaruzelaSection.js";
+
 const hireUsTaskWrappers = [...document.querySelectorAll(".taskWrapper")];
-const toggleBigMenuButton = document.querySelector(".header__hamburgerWrapper");
 const pageWrapper = document.querySelector(".mainPage");
 const popupNavigation = document.querySelector(".popupNavigation");
+
+const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
+const hireUsNavbutton = document.querySelector("header .hireUsButton");
+const toggleBigMenuButton = document.querySelector(".header__hamburgerWrapper");
+const switchLeftCaruzelaButton = document.getElementById("caruzela_leftButton");
+const switchRightCaruzelaButton = document.getElementById("caruzela_RightButton");
 
 const homeSection = document.getElementById("homeSection");
 const worksSection = document.getElementById("worksSection");
@@ -24,6 +29,7 @@ let activeSectionIndex = 2;
 
 function throttle(fn, wait) {
   let time = Date.now();
+  console.log(time);
   return function () {
     if (time + wait - Date.now() < 0) {
       fn.apply(this, arguments);
@@ -195,5 +201,8 @@ hireUsTaskWrappers.forEach(taskWrapper => {
 toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
 
 window.addEventListener("wheel", e => onScroll(e));
+
+switchLeftCaruzelaButton.addEventListener("click", workCaruzelaSection.switchLeft);
+switchRightCaruzelaButton.addEventListener("click", workCaruzelaSection.switchRight);
 
 changeActiveSection(false, 2);
