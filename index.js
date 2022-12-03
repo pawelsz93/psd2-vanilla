@@ -22,6 +22,18 @@ const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
 
 let activeSectionIndex = 2;
 
+function throttle(fn, wait) {
+  let time = Date.now();
+  return function () {
+    if (time + wait - Date.now() < 0) {
+      fn.apply(this, arguments);
+      time = Date.now();
+    }
+  };
+}
+
+const onScroll = throttle(e => changeSectionOnScroll(e), 1000);
+
 function getSectionIndexFromID(id) {
   const index = Number(id.slice(0, 2));
   return index;
@@ -59,91 +71,35 @@ function setActiveNavLink(chosenLink) {
     link.classList.remove("sideNavigation__link--active");
   });
   chosenLink.classList.add("sideNavigation__link--active");
-  // console.log(activeSectionIndex);
 }
 
 function showHomeSection() {
   hireUsNavbutton.style.display = "none";
 
-  // allSections.forEach(section => {
-  //   section.style.display = "none";
-  // });
-  // homeSection.style.display = "block";
-
-  // allLinks.forEach(link => {
-  //   link.classList.remove("sideNavigation__link--active");
-  // });
-  // homeLink.classList.add("sideNavigation__link--active");
-
-  // setTimeout(() => homeSection.classList.remove("homeSection--scrolledUp"), "1");
   homeSection.classList.remove("homeSection--scrolledUp");
 }
 
 function showWorksSection() {
   hireUsNavbutton.style.display = "block";
 
-  // allSections.forEach(section => {
-  //   section.style.display = "none";
-  // });
-  // worksSection.style.display = "block";
-
-  // allLinks.forEach(link => {
-  //   link.classList.remove("sideNavigation__link--active");
-  // });
-  // worksLink.classList.add("sideNavigation__link--active");
-
-  // setTimeout(() => worksSection.classList.remove("workCaruzelaSection--scrolledUp"), "1");
   worksSection.classList.remove("workCaruzelaSection--scrolledUp");
 }
 
 function showAboutSection() {
   hireUsNavbutton.style.display = "block";
 
-  // allSections.forEach(section => {
-  //   section.style.display = "none";
-  // });
-  // aboutSection.style.display = "block";
-
-  // allLinks.forEach(link => {
-  //   link.classList.remove("sideNavigation__link--active");
-  // });
-  // aboutLink.classList.add("sideNavigation__link--active");
-
-  // setTimeout(() => aboutSection.classList.remove("aboutSection--scrolledUp"), "1");
   aboutSection.classList.remove("aboutSection--scrolledUp");
 }
 
 function showContactSection() {
   hireUsNavbutton.style.display = "block";
 
-  // allSections.forEach(section => {
-  //   section.style.display = "none";
-  // });
-  // contactSection.style.display = "block";
-
-  // allLinks.forEach(link => {
-  //   link.classList.remove("sideNavigation__link--active");
-  // });
-  // contactLink.classList.add("sideNavigation__link--active");
-
-  // setTimeout(() => contactSection.classList.remove("contactSection--scrolledUp"), "1");
   contactSection.classList.remove("contactSection--scrolledUp");
 }
 
 function showHireUsSection() {
   hireUsNavbutton.style.display = "none";
 
-  // allSections.forEach(section => {
-  //   section.style.display = "none";
-  // });
-  // hireUsSection.style.display = "block";
-
-  // allLinks.forEach(link => {
-  //   link.classList.remove("sideNavigation__link--active");
-  // });
-  // hireUsLink.classList.add("sideNavigation__link--active");
-
-  // setTimeout(() => hireUsSection.classList.remove("hireUsSection--scrolledUp"), "1");
   hireUsSection.classList.remove("hireUsSection--scrolledUp");
 }
 
@@ -158,8 +114,6 @@ function changeActiveSection(e, sectionIndex) {
   } else {
     activeSectionIndex = sectionIndex;
   }
-
-  console.log(prevSection);
 
   switch (activeSectionIndex) {
     case 1:
@@ -199,18 +153,24 @@ function changeActiveSection(e, sectionIndex) {
 }
 
 function changeSectionOnScroll(e) {
-  //funkcja debounce
+  let nextSectionIndex = activeSectionIndex;
+
   if (e.deltaY > 0) {
-    if (activeSectionIndex < 5) {
-      activeSectionIndex++;
+    if (nextSectionIndex < 5) {
+      nextSectionIndex++;
+    } else {
+      nextSectionIndex = 1;
     }
-    changeActiveSection(e, activeSectionIndex);
+    console.log(nextSectionIndex);
+    changeActiveSection(e, nextSectionIndex);
   } else {
-    if (activeSectionIndex > 1) {
-      activeSectionIndex--;
+    if (nextSectionIndex > 1) {
+      nextSectionIndex--;
+    } else {
+      nextSectionIndex = 5;
     }
 
-    changeActiveSection(e, activeSectionIndex);
+    changeActiveSection(e, nextSectionIndex);
   }
 }
 
@@ -234,6 +194,6 @@ hireUsTaskWrappers.forEach(taskWrapper => {
 
 toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
 
-window.addEventListener("wheel", e => changeSectionOnScroll(e));
+window.addEventListener("wheel", e => onScroll(e));
 
 changeActiveSection(false, 2);

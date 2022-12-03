@@ -7,7 +7,7 @@ $text-vertical-margin: 20px;
   height: 70vh;
   flex-grow: 1;
   opacity: 1;
-  transition: 2s;
+  transition: $animation-time-interval;
 
   &--scrolledUp {
     opacity: 0;

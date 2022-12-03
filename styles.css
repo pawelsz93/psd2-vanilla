@@ -85,7 +85,7 @@
   font-family: "Montserrat", sans-serif;
   width: 70vw;
   opacity: 1;
-  transition: 2s;
+  transition: 0.5s;
 }
 .homeSection--scrolledUp {
   opacity: 0;
@@ -252,7 +252,7 @@
   height: 70vh;
   flex-grow: 1;
   opacity: 1;
-  transition: 2s;
+  transition: 0.5s;
 }
 .workCaruzelaSection--scrolledUp {
   opacity: 0;
@@ -338,7 +338,7 @@
   position: absolute;
   color: #fff;
   opacity: 1;
-  transition: 2s;
+  transition: 0.5s;
 }
 .aboutSection--scrolledUp {
   opacity: 0;
@@ -466,7 +466,7 @@
   width: 100%;
   height: 100%;
   opacity: 1;
-  transition: 2s;
+  transition: 0.5s;
 }
 .contactSection--scrolledUp {
   opacity: 0;
@@ -528,7 +528,7 @@
 .hireUsSection {
   position: absolute;
   opacity: 1;
-  transition: 2s;
+  transition: 0.5s;
 }
 .hireUsSection--scrolledUp {
   opacity: 0;

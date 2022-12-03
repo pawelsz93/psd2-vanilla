@@ -1,7 +1,7 @@
 .hireUsSection {
   position: absolute;
   opacity: 1;
-  transition: 2s;
+  transition: $animation-time-interval;
 
   &--scrolledUp {
     opacity: 0;
