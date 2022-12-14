@@ -5,6 +5,8 @@ const pageWrapper = document.querySelector(".mainPage");
 const popupNavigation = document.querySelector(".popupNavigation");
 
 const navButtons = [...document.querySelectorAll(".sideNavigation__link")];
+const popupNavButtons = [...document.querySelectorAll(".popupNavigationList__link")];
+const popupNavListElements = [...document.querySelectorAll(".popupNavigationList__item")];
 const hireUsNavbutton = document.querySelector("header .hireUsButton");
 const toggleBigMenuButton = document.querySelector(".header__hamburgerWrapper");
 const switchLeftCaruzelaButton = document.getElementById("caruzela_leftButton");
@@ -26,10 +28,11 @@ const allSections = [homeSection, worksSection, aboutSection, contactSection, hi
 const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
 
 let activeSectionIndex = 2;
+let popupMenuActive = false;
 
 function throttle(fn, wait) {
   let time = Date.now();
-  console.log(time);
+
   return function () {
     if (time + wait - Date.now() < 0) {
       fn.apply(this, arguments);
@@ -49,19 +52,14 @@ function getActiveSection(index) {
   switch (index) {
     case 1:
       return homeSection;
-      break;
     case 2:
       return worksSection;
-      break;
     case 3:
       return aboutSection;
-      break;
     case 4:
       return contactSection;
-      break;
     case 5:
       return hireUsSection;
-      break;
 
     default:
       break;
@@ -76,7 +74,12 @@ function setActiveNavLink(chosenLink) {
   allLinks.forEach(link => {
     link.classList.remove("sideNavigation__link--active");
   });
+  popupNavListElements.forEach(link => {
+    link.classList.remove("popupNavigationList__item--active");
+  });
+
   chosenLink.classList.add("sideNavigation__link--active");
+  popupNavListElements[activeSectionIndex - 1].classList.add("popupNavigationList__item--active");
 }
 
 function showHomeSection() {
@@ -167,7 +170,6 @@ function changeSectionOnScroll(e) {
     } else {
       nextSectionIndex = 1;
     }
-    console.log(nextSectionIndex);
     changeActiveSection(e, nextSectionIndex);
   } else {
     if (nextSectionIndex > 1) {
@@ -175,12 +177,23 @@ function changeSectionOnScroll(e) {
     } else {
       nextSectionIndex = 5;
     }
-
     changeActiveSection(e, nextSectionIndex);
   }
 }
 
+function handlePopupMenuChange(e) {
+  toggleBigMenu();
+  changeActiveSection(e);
+}
+
 function toggleBigMenu() {
+  popupMenuActive = !popupMenuActive;
+
+  if (popupMenuActive) {
+    pageWrapper.addEventListener("click", toggleBigMenu, { capture: true, once: true });
+  } else {
+    pageWrapper.removeEventListener("click", toggleBigMenu, { capture: true, once: true });
+  }
   pageWrapper.classList.toggle("mainPage--minimalized");
   popupNavigation.classList.toggle("popupNavigation--opened");
 }
@@ -191,18 +204,22 @@ const toggleTaskCheckbox = taskWrapper => {
 };
 
 navButtons.forEach(button => {
-  button.addEventListener("click", e => changeActiveSection(e), true);
+  button.addEventListener("click", e => changeActiveSection(e));
+});
+
+popupNavButtons.forEach(button => {
+  button.addEventListener("click", e => handlePopupMenuChange(e), true);
 });
 
 hireUsTaskWrappers.forEach(taskWrapper => {
   taskWrapper.addEventListener("click", () => toggleTaskCheckbox(taskWrapper));
 });
 
-toggleBigMenuButton.addEventListener("click", () => toggleBigMenu());
+toggleBigMenuButton.addEventListener("click", e => toggleBigMenu(e));
 
 window.addEventListener("wheel", e => onScroll(e));
 
 switchLeftCaruzelaButton.addEventListener("click", workCaruzelaSection.switchLeft);
 switchRightCaruzelaButton.addEventListener("click", workCaruzelaSection.switchRight);
 
-changeActiveSection(false, 2);
+changeActiveSection(false, 1);
