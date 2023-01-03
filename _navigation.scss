@@ -8,25 +8,34 @@
 }
 
 .sideNavigation {
+  position: relative;
   min-width: 5vw;
   height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border-left: 2px solid $font-color-dark;
   list-style-type: square;
   list-style-position: inside;
-  // padding-left: 20px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background-color: $font-color-dark;
+    z-index: -1;
+  }
 
   &__listItem {
-    // display: block;
     &::marker {
       font-size: 6px;
       color: $font-color;
+    }
 
-      &--active {
-        color: $blue-color;
-      }
+    &--active::marker {
+      color: $blue-color;
     }
   }
 
@@ -54,8 +63,8 @@
     }
 
     &--active::before {
-      display: inline-block;
       position: absolute;
+      display: inline-block;
       transform: translateX(-45px) translateY($nav-text-translate); //y wyśrodkować numer po lewej względem markera
     }
   }

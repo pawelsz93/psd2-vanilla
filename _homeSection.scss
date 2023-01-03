@@ -7,6 +7,7 @@
   transition: $animation-time-interval;
 
   &--scrolledUp {
+    transform: translateY(50px);
     opacity: 0;
     visibility: hidden;
   }

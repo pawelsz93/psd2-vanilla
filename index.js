@@ -162,6 +162,8 @@ function changeActiveSection(e, sectionIndex) {
 }
 
 function changeSectionOnScroll(e) {
+  if (popupMenuActive) return; //ignore scrolling
+
   let nextSectionIndex = activeSectionIndex;
 
   if (e.deltaY > 0) {
