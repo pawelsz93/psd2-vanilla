@@ -24,8 +24,14 @@ const aboutLink = document.getElementById("03_sideNav");
 const contactLink = document.getElementById("04_sideNav");
 const hireUsLink = document.getElementById("05_sideNav");
 
+const homeNavListItem = document.getElementById("01_sideNavListItem");
+const worksNavListItem = document.getElementById("02_sideNavListItem");
+const aboutNavListItem = document.getElementById("03_sideNavListItem");
+const contactNavListItem = document.getElementById("04_sideNavListItem");
+const hireUsNavListItem = document.getElementById("05_sideNavListItem");
+
 const allSections = [homeSection, worksSection, aboutSection, contactSection, hireUsSection];
-const allLinks = [homeLink, worksLink, aboutLink, contactLink, hireUsLink];
+const allLinks = [homeNavListItem, worksNavListItem, aboutNavListItem, contactNavListItem, hireUsNavListItem];
 
 let activeSectionIndex = 2;
 let popupMenuActive = false;
@@ -72,13 +78,13 @@ function animateScroll(prevSection) {
 
 function setActiveNavLink(chosenLink) {
   allLinks.forEach(link => {
-    link.classList.remove("sideNavigation__link--active");
+    link.classList.remove("sideNavListItem--active");
   });
   popupNavListElements.forEach(link => {
     link.classList.remove("popupNavigationList__item--active");
   });
 
-  chosenLink.classList.add("sideNavigation__link--active");
+  chosenLink.classList.add("sideNavListItem--active");
   popupNavListElements[activeSectionIndex - 1].classList.add("popupNavigationList__item--active");
 }
 
@@ -127,31 +133,31 @@ function changeActiveSection(e, sectionIndex) {
   switch (activeSectionIndex) {
     case 1:
       animateScroll(prevSection);
-      setActiveNavLink(homeLink);
+      setActiveNavLink(homeNavListItem);
       setTimeout(() => showHomeSection(), "500");
       break;
 
     case 2:
       animateScroll(prevSection);
-      setActiveNavLink(worksLink);
+      setActiveNavLink(worksNavListItem);
       setTimeout(() => showWorksSection(), "500");
       break;
 
     case 3:
       animateScroll(prevSection);
-      setActiveNavLink(aboutLink);
+      setActiveNavLink(aboutNavListItem);
       setTimeout(() => showAboutSection(), "500");
       break;
 
     case 4:
       animateScroll(prevSection);
-      setActiveNavLink(contactLink);
+      setActiveNavLink(contactNavListItem);
       setTimeout(() => showContactSection(), "500");
       break;
 
     case 5:
       animateScroll(prevSection);
-      setActiveNavLink(hireUsLink);
+      setActiveNavLink(hireUsNavListItem);
       setTimeout(() => showHireUsSection(), "500");
       break;
 

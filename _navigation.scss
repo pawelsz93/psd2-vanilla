@@ -18,6 +18,7 @@
   list-style-position: inside;
 
   &::before {
+    // line in side navigation
     position: absolute;
     content: "";
     top: 0;
@@ -28,44 +29,65 @@
     z-index: -1;
   }
 
-  &__listItem {
-    &::marker {
-      font-size: 6px;
-      color: $font-color;
-    }
+  // &__link {
+  //   &--active span {
+  //     display: inline-block;
+  //     padding-left: 20px;
+  //     animation: fadeIn 0.8s;
+  //     transform: translateY($nav-text-translate); //y wyśrodkować nazwę po prawej względem markera
+  //   }
 
-    &--active::marker {
-      color: $blue-color;
-    }
+  //   &::before {
+  //     display: inline-block;
+  //     content: attr(data-index);
+  //     transform: translateY($nav-text-translate); //y wyśrodkować numer po prawej względem markera
+  //   }
+
+  //   &--active::before {
+  //     position: absolute;
+  //     display: inline-block;
+  //     transform: translateX(-45px) translateY($nav-text-translate); //y wyśrodkować numer po lewej względem markera
+  //   }
+  // }
+}
+
+.sideNavListItem {
+  &::marker {
+    font-size: 6px;
+    color: $font-color;
   }
 
   &__link {
-    border: none;
-    background-color: transparent;
-    color: $font-color;
     cursor: pointer;
 
     & span {
       display: none;
     }
 
-    &--active span {
-      display: inline-block;
-      padding-left: 20px;
-      animation: fadeIn 0.8s;
-      transform: translateY($nav-text-translate); //y wyśrodkować nazwę po prawej względem markera
-    }
-
     &::before {
       display: inline-block;
       content: attr(data-index);
-      transform: translateY($nav-text-translate); //y wyśrodkować numer po prawej względem markera
+      transform: translateY($nav-text-translate);
+    }
+  }
+
+  &--active {
+    &::marker {
+      color: $blue-color;
     }
 
-    &--active::before {
-      position: absolute;
-      display: inline-block;
-      transform: translateX(-45px) translateY($nav-text-translate); //y wyśrodkować numer po lewej względem markera
+    & .sideNavListItem__link {
+      & span {
+        display: inline-block;
+        padding-left: 20px;
+        animation: fadeIn 0.8s;
+        transform: translateY($nav-text-translate);
+      }
+      &::before {
+        position: absolute;
+        display: inline-block;
+        transform: translateX(-45px) translateY($nav-text-translate);
+      }
     }
   }
 }

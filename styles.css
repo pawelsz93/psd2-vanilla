@@ -222,35 +222,33 @@
   background-color: #333;
   z-index: -1;
 }
-.sideNavigation__listItem::marker {
+
+.sideNavListItem::marker {
   font-size: 6px;
   color: #fff;
 }
-.sideNavigation__listItem--active::marker {
-  color: #0f33ff;
-}
-.sideNavigation__link {
-  border: none;
-  background-color: transparent;
-  color: #fff;
+.sideNavListItem__link {
   cursor: pointer;
 }
-.sideNavigation__link span {
+.sideNavListItem__link span {
   display: none;
 }
-.sideNavigation__link--active span {
+.sideNavListItem__link::before {
+  display: inline-block;
+  content: attr(data-index);
+  transform: translateY(4px);
+}
+.sideNavListItem--active::marker {
+  color: #0f33ff;
+}
+.sideNavListItem--active .sideNavListItem__link span {
   display: inline-block;
   padding-left: 20px;
   -webkit-animation: fadeIn 0.8s;
           animation: fadeIn 0.8s;
   transform: translateY(4px);
 }
-.sideNavigation__link::before {
-  display: inline-block;
-  content: attr(data-index);
-  transform: translateY(4px);
-}
-.sideNavigation__link--active::before {
+.sideNavListItem--active .sideNavListItem__link::before {
   position: absolute;
   display: inline-block;
   transform: translateX(-45px) translateY(4px);
