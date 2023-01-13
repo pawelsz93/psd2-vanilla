@@ -72,8 +72,16 @@ function getActiveSection(index) {
   }
 }
 
-function animateScroll(prevSection) {
-  prevSection.classList.add(`${prevSection.classList[0]}--scrolledUp`);
+function animateScroll(prevSection, scrollAnimation) {
+  if (scrollAnimation == "scrollUp") {
+    prevSection.classList.add(`${prevSection.classList[0]}--scrolledUp`);
+  }
+  if (scrollAnimation == "scrollDown") {
+    prevSection.classList.add(`${prevSection.classList[0]}--scrolledDown`);
+  }
+  if (scrollAnimation == "normal") {
+    prevSection.classList.add(`${prevSection.classList[0]}--scrolled`);
+  }
 }
 
 function setActiveNavLink(chosenLink) {
@@ -89,74 +97,84 @@ function setActiveNavLink(chosenLink) {
 }
 
 function showHomeSection() {
-  hireUsNavbutton.style.display = "none";
-
   homeSection.classList.remove("homeSection--scrolledUp");
+  homeSection.classList.remove("homeSection--scrolledDown");
+  homeSection.classList.remove("homeSection--scrolled");
+
+  hireUsNavbutton.style.display = "none";
 }
 
 function showWorksSection() {
-  hireUsNavbutton.style.display = "block";
-
   worksSection.classList.remove("workCaruzelaSection--scrolledUp");
+  worksSection.classList.remove("workCaruzelaSection--scrolledDown");
+  worksSection.classList.remove("workCaruzelaSection--scrolled");
+
+  hireUsNavbutton.style.display = "block";
 }
 
 function showAboutSection() {
-  hireUsNavbutton.style.display = "block";
-
   aboutSection.classList.remove("aboutSection--scrolledUp");
+  aboutSection.classList.remove("aboutSection--scrolledDown");
+  aboutSection.classList.remove("aboutSection--scrolled");
+
+  hireUsNavbutton.style.display = "block";
 }
 
 function showContactSection() {
-  hireUsNavbutton.style.display = "block";
-
   contactSection.classList.remove("contactSection--scrolledUp");
+  contactSection.classList.remove("contactSection--scrolledDown");
+  contactSection.classList.remove("contactSection--scrolled");
+
+  hireUsNavbutton.style.display = "block";
 }
 
 function showHireUsSection() {
-  hireUsNavbutton.style.display = "none";
-
   hireUsSection.classList.remove("hireUsSection--scrolledUp");
+  hireUsSection.classList.remove("hireUsSection--scrolledDown");
+  hireUsSection.classList.remove("hireUsSection--scrolled");
+
+  hireUsNavbutton.style.display = "none";
 }
 
-function changeActiveSection(e, sectionIndex) {
+function changeActiveSection(e, nextSectionIndex, scrollAnimation = "normal") {
   const prevSection = getActiveSection(activeSectionIndex);
 
-  if (!sectionIndex) {
+  if (!nextSectionIndex) {
     const { id } = e.target;
     const clickedSectionIndex = getSectionIndexFromID(id);
     if (activeSectionIndex == clickedSectionIndex) return;
     activeSectionIndex = clickedSectionIndex;
   } else {
-    activeSectionIndex = sectionIndex;
+    activeSectionIndex = nextSectionIndex;
   }
 
   switch (activeSectionIndex) {
     case 1:
-      animateScroll(prevSection);
+      animateScroll(prevSection, scrollAnimation);
       setActiveNavLink(homeNavListItem);
       setTimeout(() => showHomeSection(), "500");
       break;
 
     case 2:
-      animateScroll(prevSection);
+      animateScroll(prevSection, scrollAnimation);
       setActiveNavLink(worksNavListItem);
       setTimeout(() => showWorksSection(), "500");
       break;
 
     case 3:
-      animateScroll(prevSection);
+      animateScroll(prevSection, scrollAnimation);
       setActiveNavLink(aboutNavListItem);
       setTimeout(() => showAboutSection(), "500");
       break;
 
     case 4:
-      animateScroll(prevSection);
+      animateScroll(prevSection, scrollAnimation);
       setActiveNavLink(contactNavListItem);
       setTimeout(() => showContactSection(), "500");
       break;
 
     case 5:
-      animateScroll(prevSection);
+      animateScroll(prevSection, scrollAnimation);
       setActiveNavLink(hireUsNavListItem);
       setTimeout(() => showHireUsSection(), "500");
       break;
@@ -171,26 +189,43 @@ function changeSectionOnScroll(e) {
   if (popupMenuActive) return; //ignore scrolling
 
   let nextSectionIndex = activeSectionIndex;
+  let scrollAnimation = "normal";
 
   if (e.deltaY > 0) {
     if (nextSectionIndex < 5) {
+      scrollAnimation = "scrollDown";
       nextSectionIndex++;
     } else {
       nextSectionIndex = 1;
     }
-    changeActiveSection(e, nextSectionIndex);
+    changeActiveSection(e, nextSectionIndex, scrollAnimation);
   } else {
     if (nextSectionIndex > 1) {
+      scrollAnimation = "scrollUp";
       nextSectionIndex--;
     } else {
       nextSectionIndex = 5;
     }
-    changeActiveSection(e, nextSectionIndex);
+    changeActiveSection(e, nextSectionIndex, scrollAnimation);
   }
 }
 
 function handlePopupMenuChange(e) {
   toggleBigMenu();
+  changeActiveSection(e);
+}
+
+function handleSideNavChange(e) {
+  let scrollAnimation = "normal";
+  const { id } = e.target;
+  const clickedSectionIndex = getSectionIndexFromID(id);
+  if (clickedSectionIndex > activeSectionIndex) {
+    scrollAnimation = "scrollDown";
+  }
+  if (clickedSectionIndex < activeSectionIndex) {
+    scrollAnimation = "scrollDown";
+  }
+  console.log(scrollAnimation);
   changeActiveSection(e);
 }
 
@@ -212,7 +247,7 @@ const toggleTaskCheckbox = taskWrapper => {
 };
 
 navButtons.forEach(button => {
-  button.addEventListener("click", e => changeActiveSection(e));
+  button.addEventListener("click", e => handleSideNavChange(e));
 });
 
 popupNavButtons.forEach(button => {

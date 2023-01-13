@@ -88,7 +88,17 @@
   transition: 0.5s;
 }
 .homeSection--scrolledUp {
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.homeSection--scrolledDown {
   transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.homeSection--scrolled {
+  transform: translateY(0px);
   opacity: 0;
   visibility: hidden;
 }
@@ -284,6 +294,17 @@
   transition: 0.5s;
 }
 .workCaruzelaSection--scrolledUp {
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.workCaruzelaSection--scrolledDown {
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.workCaruzelaSection--scrolled {
+  transform: translateY(0px);
   opacity: 0;
   visibility: hidden;
 }
@@ -361,6 +382,17 @@
   transition: 0.5s;
 }
 .aboutSection--scrolledUp {
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.aboutSection--scrolledDown {
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.aboutSection--scrolled {
+  transform: translateY(0px);
   opacity: 0;
   visibility: hidden;
 }
@@ -489,6 +521,17 @@
   transition: 0.5s;
 }
 .contactSection--scrolledUp {
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.contactSection--scrolledDown {
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.contactSection--scrolled {
+  transform: translateY(0px);
   opacity: 0;
   visibility: hidden;
 }
@@ -551,6 +594,17 @@
   transition: 0.5s;
 }
 .hireUsSection--scrolledUp {
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.hireUsSection--scrolledDown {
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+}
+.hireUsSection--scrolled {
+  transform: translateY(0px);
   opacity: 0;
   visibility: hidden;
 }

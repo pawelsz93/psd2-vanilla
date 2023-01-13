@@ -4,6 +4,19 @@
   transition: $animation-time-interval;
 
   &--scrolledUp {
+    transform: translateY(-50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--scrolledDown {
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--scrolled {
+    transform: translateY(0px);
     opacity: 0;
     visibility: hidden;
   }
