@@ -124,6 +124,10 @@
 .homeSection--scrolledDown {
   -webkit-animation: slideDown 0.5s;
           animation: slideDown 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  transform: translateY(0px);
+  opacity: 0;
   visibility: hidden;
 }
 .homeSection--scrolled {
@@ -276,6 +280,7 @@
   display: inline-block;
   content: attr(data-index);
   transform: translateY(4px);
+  color: #333;
 }
 .sideNavListItem--active::marker {
   color: #0f33ff;
@@ -291,6 +296,7 @@
   position: absolute;
   display: inline-block;
   transform: translateX(-45px) translateY(4px);
+  color: #fff;
 }
 
 .index1 {

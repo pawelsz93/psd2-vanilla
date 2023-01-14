@@ -31,6 +31,9 @@
 
   &--scrolledDown {
     animation: slideDown $animation-time-interval;
+    animation-fill-mode: both;
+    transform: translateY(0px);
+    opacity: 0;
     visibility: hidden;
   }
 

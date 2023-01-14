@@ -47,6 +47,7 @@
       display: inline-block;
       content: attr(data-index);
       transform: translateY($nav-text-translate);
+      color: $font-color-dark;
     }
   }
 
@@ -66,6 +67,7 @@
         position: absolute;
         display: inline-block;
         transform: translateX(-45px) translateY($nav-text-translate);
+        color: $font-color;
       }
     }
   }
