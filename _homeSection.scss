@@ -1,3 +1,20 @@
+@keyframes slideDown {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+}
+
 .homeSection {
   position: absolute;
   color: $font-color;
@@ -13,8 +30,7 @@
   }
 
   &--scrolledDown {
-    transform: translateY(50px);
-    opacity: 0;
+    animation: slideDown $animation-time-interval;
     visibility: hidden;
   }
 
