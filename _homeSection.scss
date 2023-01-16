@@ -1,17 +1,3 @@
-@keyframes slideDown {
-  0% {
-    transform: translateY(0px);
-  }
-
-  99% {
-    transform: translateY(50px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
 .homeSection {
   position: absolute;
   color: $font-color;
@@ -21,7 +7,7 @@
   transition: $animation-time-interval;
 
   &--scrolledUp {
-    transform: translateY(-50px);
+    transform: slideUp $animation-time-interval;
     opacity: 0;
     visibility: hidden;
   }
