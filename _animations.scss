@@ -1,27 +1,27 @@
 @keyframes slideDown {
-    0% {
-      transform: translateY(0px);
-    }
-  
-    99% {
-      transform: translateY(50px);
-    }
-  
-    100% {
-      transform: translateY(0px);
-    }
+  0% {
+    transform: translateY(0px);
   }
-  
-  @keyframes slideUp {
-    0% {
-      transform: translateY(0px);
-    }
-  
-    99% {
-      transform: translateY(-50px);
-    }
-  
-    100% {
-      transform: translateY(0px);
-    }
+
+  99% {
+    transform: translateY(-50px);
   }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0px);
+  }
+
+  99% {
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

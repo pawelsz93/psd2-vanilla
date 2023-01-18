@@ -1,3 +1,47 @@
+@-webkit-keyframes slideDown {
+  0% {
+    transform: translateY(0px);
+  }
+  99% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(0px);
+  }
+  99% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes slideUp {
+  0% {
+    transform: translateY(0px);
+  }
+  99% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(0px);
+  }
+  99% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 @-webkit-keyframes fadeScrollUp {
   0% {
     opacity: 1;
@@ -14,50 +58,6 @@
   100% {
     opacity: 0;
     display: none;
-  }
-}
-@-webkit-keyframes slideDown {
-  0% {
-    transform: translateY(0px);
-  }
-  99% {
-    transform: translateY(50px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes slideDown {
-  0% {
-    transform: translateY(0px);
-  }
-  99% {
-    transform: translateY(50px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@-webkit-keyframes slideUp {
-  0% {
-    transform: translateY(0px);
-  }
-  99% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes slideUp {
-  0% {
-    transform: translateY(0px);
-  }
-  99% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0px);
   }
 }
 .header {
@@ -132,7 +132,8 @@
   transition: 0.5s;
 }
 .homeSection--scrolledUp {
-  transform: slideUp 0.5s;
+  -webkit-animation: slideUp 0.5s;
+          animation: slideUp 0.5s;
   opacity: 0;
   visibility: hidden;
 }
@@ -341,12 +342,14 @@
   transition: 0.5s;
 }
 .workCaruzelaSection--scrolledUp {
-  transform: translateY(-50px);
+  -webkit-animation: slideUp 0.5s;
+          animation: slideUp 0.5s;
   opacity: 0;
   visibility: hidden;
 }
 .workCaruzelaSection--scrolledDown {
-  transform: translateY(50px);
+  -webkit-animation: slideDown 0.5s;
+          animation: slideDown 0.5s;
   opacity: 0;
   visibility: hidden;
 }
@@ -429,12 +432,14 @@
   transition: 0.5s;
 }
 .aboutSection--scrolledUp {
-  transform: translateY(-50px);
+  -webkit-animation: slideUp 0.5s;
+          animation: slideUp 0.5s;
   opacity: 0;
   visibility: hidden;
 }
 .aboutSection--scrolledDown {
-  transform: translateY(50px);
+  -webkit-animation: slideDown 0.5s;
+          animation: slideDown 0.5s;
   opacity: 0;
   visibility: hidden;
 }
@@ -568,12 +573,14 @@
   transition: 0.5s;
 }
 .contactSection--scrolledUp {
-  transform: translateY(-50px);
+  -webkit-animation: slideUp 0.5s;
+          animation: slideUp 0.5s;
   opacity: 0;
   visibility: hidden;
 }
 .contactSection--scrolledDown {
-  transform: translateY(50px);
+  -webkit-animation: slideDown 0.5s;
+          animation: slideDown 0.5s;
   opacity: 0;
   visibility: hidden;
 }
@@ -641,12 +648,14 @@
   transition: 0.5s;
 }
 .hireUsSection--scrolledUp {
-  transform: translateY(-50px);
+  -webkit-animation: slideUp 0.5s;
+          animation: slideUp 0.5s;
   opacity: 0;
   visibility: hidden;
 }
 .hireUsSection--scrolledDown {
-  transform: translateY(50px);
+  -webkit-animation: slideDown 0.5s;
+          animation: slideDown 0.5s;
   opacity: 0;
   visibility: hidden;
 }

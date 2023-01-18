@@ -228,7 +228,8 @@ function handleSideNavChange(e) {
     scrollAnimation = "scrollDown";
   }
   if (clickedSectionIndex < activeSectionIndex) {
-    scrollAnimation = "scrollDown";
+    console.log("up");
+    scrollAnimation = "scrollUp";
   }
 
   changeActiveSection(e, clickedSectionIndex, scrollAnimation);

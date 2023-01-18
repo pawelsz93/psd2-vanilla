@@ -8,6 +8,26 @@
   padding: 6px 18px;
 }
 
+@mixin scrollAnimations {
+  &--scrolledUp {
+    animation: slideUp $animation-time-interval;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--scrolledDown {
+    animation: slideDown $animation-time-interval;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--scrolled {
+    transform: translateY(0px);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 @keyframes fadeScrollUp {
   0% {
     opacity: 1;

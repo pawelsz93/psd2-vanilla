@@ -6,23 +6,7 @@
   opacity: 1;
   transition: $animation-time-interval;
 
-  &--scrolledUp {
-    transform: slideUp $animation-time-interval;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &--scrolledDown {
-    animation: slideDown $animation-time-interval;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  &--scrolled {
-    transform: translateY(0px);
-    opacity: 0;
-    visibility: hidden;
-  }
+  @include scrollAnimations;
 
   &__up {
     height: 50vh;
