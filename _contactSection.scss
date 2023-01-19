@@ -5,7 +5,7 @@
   opacity: 1;
   transition: $animation-time-interval;
 
-  @include scrollAnimations;
+  // @include scrollAnimations;
 
   &::before {
     content: "";
@@ -18,12 +18,35 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
+    transition: $animation-time-interval;
   }
 
   &__contactInfo {
     position: absolute;
     top: 0;
     right: 0;
+    transition: $animation-time-interval;
+  }
+
+  &--scrolledUp::before,
+  &--scrolledUp .contactSection__contactInfo {
+    animation: slideUp $animation-time-interval;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--scrolledDown::before,
+  &--scrolledDown .contactSection__contactInfo {
+    animation: slideDown $animation-time-interval;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &--scrolled::before,
+  &--scrolled .contactSection__contactInfo {
+    transform: translateY(0px);
+    opacity: 0;
+    visibility: hidden;
   }
 }
 

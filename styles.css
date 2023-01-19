@@ -572,23 +572,6 @@
   opacity: 1;
   transition: 0.5s;
 }
-.contactSection--scrolledUp {
-  -webkit-animation: slideUp 0.5s;
-          animation: slideUp 0.5s;
-  opacity: 0;
-  visibility: hidden;
-}
-.contactSection--scrolledDown {
-  -webkit-animation: slideDown 0.5s;
-          animation: slideDown 0.5s;
-  opacity: 0;
-  visibility: hidden;
-}
-.contactSection--scrolled {
-  transform: translateY(0px);
-  opacity: 0;
-  visibility: hidden;
-}
 .contactSection::before {
   content: "";
   position: fixed;
@@ -600,11 +583,30 @@
   background-size: cover;
   background-position: center;
   z-index: -1;
+  transition: 0.5s;
 }
 .contactSection__contactInfo {
   position: absolute;
   top: 0;
   right: 0;
+  transition: 0.5s;
+}
+.contactSection--scrolledUp::before, .contactSection--scrolledUp .contactSection__contactInfo {
+  -webkit-animation: slideUp 0.5s;
+          animation: slideUp 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.contactSection--scrolledDown::before, .contactSection--scrolledDown .contactSection__contactInfo {
+  -webkit-animation: slideDown 0.5s;
+          animation: slideDown 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.contactSection--scrolled::before, .contactSection--scrolled .contactSection__contactInfo {
+  transform: translateY(0px);
+  opacity: 0;
+  visibility: hidden;
 }
 
 .contactInfo {
