@@ -838,6 +838,8 @@ body {
   margin: 0;
   background-color: #0c0c0c;
   perspective: 800px;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .mainPage {
