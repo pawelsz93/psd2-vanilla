@@ -570,8 +570,15 @@
   width: 100%;
   height: 100%;
   opacity: 1;
-  z-index: -1;
-  transition: 0.5s;
+}
+.contactSection--scrolledUp {
+  visibility: hidden;
+}
+.contactSection--scrolledDown {
+  visibility: hidden;
+}
+.contactSection--scrolled {
+  visibility: hidden;
 }
 .contactSection::before {
   content: "";
@@ -589,7 +596,7 @@
 .contactSection__contactInfo {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 500px;
   transition: 0.5s;
 }
 .contactSection--scrolledUp::before, .contactSection--scrolledUp .contactSection__contactInfo {
