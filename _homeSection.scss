@@ -50,6 +50,7 @@
     &:hover {
       opacity: 1;
     }
+
     & h3 {
       margin: 20px 0 20px 0;
       text-transform: uppercase;
@@ -66,9 +67,11 @@
   border: none;
   cursor: pointer;
   padding: 5px 10px;
+
   & img {
     vertical-align: text-top;
   }
+
   &::after {
     display: block;
     content: "";
@@ -81,6 +84,7 @@
     height: 25px;
     background-color: $blue-color;
   }
+
   &::before {
     display: block;
     content: "";
@@ -94,6 +98,7 @@
     background-color: $blue-color;
     transition: all 0.2s;
   }
+
   &:hover::before {
     left: -10px;
   }
