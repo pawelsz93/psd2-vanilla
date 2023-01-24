@@ -110,3 +110,11 @@
   color: $font-color;
   font-weight: 900;
 }
+
+@media (max-width: 900px) {
+  .upperPart {
+    &__cosmonautImg {
+      transform: scale(90%);
+    }
+  }
+}

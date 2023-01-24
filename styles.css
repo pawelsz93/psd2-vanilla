@@ -241,6 +241,11 @@
   font-weight: 900;
 }
 
+@media (max-width: 900px) {
+  .upperPart__cosmonautImg {
+    transform: scale(90%);
+  }
+}
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -249,7 +254,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -312,6 +316,11 @@
   color: #fff;
 }
 
+@media (max-width: 1180px) {
+  .sideNavigation {
+    display: none;
+  }
+}
 .index1 {
   order: 1;
 }
