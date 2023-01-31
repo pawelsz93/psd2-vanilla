@@ -21,6 +21,7 @@
 
   &__cosmonautImg {
     position: absolute;
+    height: 400px;
     right: 0px;
     bottom: 0px;
     z-index: -1;
@@ -121,4 +122,8 @@
   .bigText {
     font-size: $font-medium;
   }
+}
+
+@media (max-width:) {
+  
 }
