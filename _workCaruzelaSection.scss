@@ -104,3 +104,30 @@ $text-vertical-margin: 20px;
     }
   }
 }
+
+@media (max-width: 900px) {
+  .workElement {
+    &__img {
+      transform: scale(80%);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .workElement {
+    &__img {
+      display: none;
+    }
+  }
+  .caruzela{
+    &__workElement {
+      &--active {
+        .workElement__img {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  
+}
