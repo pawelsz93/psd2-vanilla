@@ -123,6 +123,15 @@
   background-color: white;
 }
 
+.hireUsButton--hidden {
+  display: none;
+}
+
+@media (max-width: 766px) {
+  .header .hireUsButton {
+    display: none;
+  }
+}
 .homeSection {
   position: absolute;
   color: #fff;
@@ -473,8 +482,14 @@
   .workElement__img {
     display: none;
   }
+  .workElement h3 {
+    display: none;
+  }
   .caruzela__workElement--active .workElement__img {
     display: block;
+  }
+  .caruzela__workElement--active h3 {
+    display: inline;
   }
 }
 .aboutSection {

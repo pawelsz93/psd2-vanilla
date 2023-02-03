@@ -118,12 +118,20 @@ $text-vertical-margin: 20px;
     &__img {
       display: none;
     }
+
+    & h3 {
+      display: none;
+    }
   }
   .caruzela{
     &__workElement {
       &--active {
         .workElement__img {
           display: block;
+        }
+
+        h3 {
+          display: inline;
         }
       }
     }

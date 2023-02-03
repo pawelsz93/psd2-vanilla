@@ -115,7 +115,8 @@ function showHomeSection() {
   homeSection.classList.remove("homeSection--scrolledDown");
   homeSection.classList.remove("homeSection--scrolled");
 
-  hireUsNavbutton.style.display = "none";
+  console.log(hireUsNavbutton.classList);
+  hireUsNavbutton.classList.add = "hireUsButton--hidden";
 }
 
 function showWorksSection() {
@@ -123,7 +124,8 @@ function showWorksSection() {
   worksSection.classList.remove("workCaruzelaSection--scrolledDown");
   worksSection.classList.remove("workCaruzelaSection--scrolled");
 
-  hireUsNavbutton.style.display = "block";
+  console.log(hireUsNavbutton);
+  hireUsNavbutton.classList.add = "hireUsButton--hidden";
 }
 
 function showAboutSection() {
@@ -131,7 +133,8 @@ function showAboutSection() {
   aboutSection.classList.remove("aboutSection--scrolledDown");
   aboutSection.classList.remove("aboutSection--scrolled");
 
-  hireUsNavbutton.style.display = "block";
+  console.log(hireUsNavbutton);
+  hireUsNavbutton.classList.add = "hireUsButton--hidden";
 }
 
 function showContactSection() {
@@ -139,7 +142,8 @@ function showContactSection() {
   contactSection.classList.remove("contactSection--scrolledDown");
   contactSection.classList.remove("contactSection--scrolled");
 
-  hireUsNavbutton.style.display = "block";
+  console.log(hireUsNavbutton);
+  hireUsNavbutton.classList.add = "hireUsButton--hidden";
 }
 
 function showHireUsSection() {
@@ -147,13 +151,12 @@ function showHireUsSection() {
   hireUsSection.classList.remove("hireUsSection--scrolledDown");
   hireUsSection.classList.remove("hireUsSection--scrolled");
 
-  hireUsNavbutton.style.display = "none";
+  console.log(hireUsNavbutton);
+  hireUsNavbutton.classList.add = "hireUsButton--hidden";
 }
 
 function changeActiveSection(e, nextSectionIndex, scrollAnimation = "normal") {
   const prevSection = getActiveSection(activeSectionIndex);
-
-  console.log(scrollAnimation);
 
   if (!nextSectionIndex) {
     const { id } = e.target;
