@@ -61,6 +61,7 @@
 }
 
 .contactInfo {
+  width: 300px;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -99,5 +100,13 @@
     &--pink {
       background-color: $pink-color;
     }
+  }
+}
+
+@media (max-width: $breakpoint-width-2) {
+  .contactSection__contactInfo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -105,7 +105,7 @@ $text-vertical-margin: 20px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: $breakpoint-width-1) {
   .workElement {
     &__img {
       transform: scale(80%);
@@ -113,7 +113,15 @@ $text-vertical-margin: 20px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $breakpoint-width-2) {
+  .workElement {
+    &__img {
+      transform: scale(60%);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-width-3) {
   .workElement {
     &__img {
       display: none;
@@ -123,7 +131,7 @@ $text-vertical-margin: 20px;
       display: none;
     }
   }
-  .caruzela{
+  .caruzela {
     &__workElement {
       &--active {
         .workElement__img {
@@ -136,6 +144,4 @@ $text-vertical-margin: 20px;
       }
     }
   }
-  
-  
 }

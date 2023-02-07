@@ -19,6 +19,7 @@
     font-weight: 900;
 
     .span {
+      // decoration above "in"
       &--in {
         &::after {
           content: "";
@@ -32,6 +33,7 @@
         }
       }
 
+      // dot decoration in the sentence end
       &--dot {
         color: transparent;
 
@@ -147,5 +149,73 @@
 
   &:hover {
     transform: translate(20px, 0px);
+  }
+}
+
+@media (max-width: $breakpoint-width-2) {
+  .aboutSection {
+    &__motto {
+      font-size: $font-small;
+
+      & .span {
+        &--in {
+          &::after {
+            top: 52px;
+            left: 182px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        &--dot {
+          &::after {
+            top: 198px;
+            left: 168px;
+            width: 9px;
+            height: 9px;
+          }
+        }
+      }
+    }
+
+    &__sithImage {
+      transform: scale(80%);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-width-3) {
+  .aboutSection {
+    &__sithImage {
+      display: none;
+    }
+
+    &__motto {
+      font-size: $font-medium;
+
+      & .span {
+        &--in {
+          &::after {
+            top: 62px;
+            left: 228px;
+            width: 26px;
+            height: 26px;
+          }
+        }
+
+        &--dot {
+          &::after {
+            top: 246px;
+            left: 210px;
+            width: 9px;
+            height: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  .aboutButtons {
+    display: none;
   }
 }

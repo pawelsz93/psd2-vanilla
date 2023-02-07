@@ -73,7 +73,7 @@
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: $breakpoint-width-0) {
   .sideNavigation {
     display: none;
   }
