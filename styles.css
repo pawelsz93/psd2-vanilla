@@ -854,18 +854,23 @@
 }
 .textInputWrapper__textInput:focus + .textInputWrapper__placeholder {
   top: -24px;
-  font-size: 12px;
+  font-size: 15px;
 }
 .textInputWrapper__placeholder {
   position: absolute;
   top: -14px;
   left: 50%;
   z-index: -1;
-  font-size: 24px;
+  font-size: 30px;
   transform: translateX(-100px);
   transition: all 0.3s;
 }
 
+@media (max-width: 600px) {
+  .textInputWrapper__placeholder {
+    font-size: 24px;
+  }
+}
 .popupNavigation {
   position: fixed;
   right: 10vw;

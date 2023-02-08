@@ -145,10 +145,15 @@
   }
 }
 
-@media (min-width : $breakpoint-width-2) {
+@media (max-width: $breakpoint-width-3) {
+  .textInputWrapper__placeholder {
+    font-size: $font-placeholder-small;
+  }
+}
+
+@media (min-width: $breakpoint-width-2) {
   .hireUsForm__taskList {
     :nth-child(0) {
-
     }
   }
 }
