@@ -30,10 +30,6 @@
     margin-bottom: 50px;
   }
 
-  &__li {
-    margin: 10px auto;
-  }
-
   &__textInputWrapper1 {
     grid-area: b;
   }
@@ -146,14 +142,57 @@
 }
 
 @media (max-width: $breakpoint-width-3) {
-  .textInputWrapper__placeholder {
-    font-size: $font-placeholder-small;
+  .textInputWrapper {
+    &__placeholder {
+      font-size: $font-placeholder-small;
+    }
+
+    &__textInput {
+      &:focus + .textInputWrapper__placeholder {
+        font-size: $font-placeholder-small * 0.5;
+      }
+    }
+  }
+
+  .taskWrapper {
+    width: 160px;
   }
 }
 
 @media (min-width: $breakpoint-width-2) {
   .hireUsForm__taskList {
-    :nth-child(0) {
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "a b b c"
+      "d d e e"
+      "f f f f";
+    gap: $grid-gap;
+    column-gap: normal 0 normal;
+    justify-items: center;
+    align-items: center;
+
+    :nth-child(1) {
+      grid-area: a;
+    }
+    :nth-child(2) {
+      grid-area: b;
+    }
+    :nth-child(3) {
+      grid-area: c;
+    }
+    :nth-child(4) {
+      grid-area: d;
+      justify-self: end;
+      margin-right: $grid-gap / 4;
+    }
+    :nth-child(5) {
+      grid-area: e;
+      justify-self: start;
+      margin-left: $grid-gap / 4;
+    }
+    :nth-child(6) {
+      grid-area: f;
     }
   }
 }

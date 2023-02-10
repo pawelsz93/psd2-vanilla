@@ -765,9 +765,6 @@
   grid-template-rows: repeat(3, 1fr);
   margin-bottom: 50px;
 }
-.hireUsForm__li {
-  margin: 10px auto;
-}
 .hireUsForm__textInputWrapper1 {
   grid-area: b;
 }
@@ -869,6 +866,46 @@
 @media (max-width: 600px) {
   .textInputWrapper__placeholder {
     font-size: 24px;
+  }
+  .textInputWrapper__textInput:focus + .textInputWrapper__placeholder {
+    font-size: 12px;
+  }
+  .taskWrapper {
+    width: 160px;
+  }
+}
+@media (min-width: 766px) {
+  .hireUsForm__taskList {
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "a b b c" "d d e e" "f f f f";
+    gap: 8px;
+    -moz-column-gap: normal 0 normal;
+         column-gap: normal 0 normal;
+    justify-items: center;
+    align-items: center;
+  }
+  .hireUsForm__taskList :nth-child(1) {
+    grid-area: a;
+  }
+  .hireUsForm__taskList :nth-child(2) {
+    grid-area: b;
+  }
+  .hireUsForm__taskList :nth-child(3) {
+    grid-area: c;
+  }
+  .hireUsForm__taskList :nth-child(4) {
+    grid-area: d;
+    justify-self: end;
+    margin-right: 2px;
+  }
+  .hireUsForm__taskList :nth-child(5) {
+    grid-area: e;
+    justify-self: start;
+    margin-left: 2px;
+  }
+  .hireUsForm__taskList :nth-child(6) {
+    grid-area: f;
   }
 }
 .popupNavigation {
