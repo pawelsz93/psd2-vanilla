@@ -11,7 +11,7 @@ function fadeOutAndIn(worksObjects) {
   });
 }
 
-export function switchLeft() {
+export function switchRight() {
   fadeOutAndIn(worksObjects);
 
   setTimeout(() => {
@@ -32,7 +32,7 @@ export function switchLeft() {
   }, 300);
 }
 
-export function switchRight() {
+export function switchLeft() {
   fadeOutAndIn(worksObjects);
 
   setTimeout(() => {

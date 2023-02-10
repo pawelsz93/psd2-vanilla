@@ -236,7 +236,7 @@
     display: none;
   }
 }
-@media (max-height: 750px) {
+@media (max-height: 750px) and (max-width: 600px) {
   .homeSection .upperPart {
     border: none;
   }
@@ -244,11 +244,6 @@
     display: none;
   }
   .homeSection .bottomPart {
-    display: none;
-  }
-}
-@media (max-width: 358px) and (max-height: 438px) {
-  .homeSection .upperPart {
     display: none;
   }
 }
@@ -955,10 +950,6 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
   color: #fff;
-}
-
-documentElement {
-  overflow: hidden;
 }
 
 body {

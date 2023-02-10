@@ -138,7 +138,7 @@
   }
 }
 
-@media (max-height: 750px) {
+@media (max-height: 750px) and (max-width: $breakpoint-width-3) {
   .homeSection {
     .upperPart {
       border: none;
@@ -149,14 +149,6 @@
     }
 
     .bottomPart {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 358px) and (max-height: 438px) {
-  .homeSection {
-    .upperPart {
       display: none;
     }
   }
