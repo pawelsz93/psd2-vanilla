@@ -19,15 +19,16 @@
   color: $font-color;
 }
 
-// documentElement {
-//   overflow: hidden;
-// }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
 
 body {
-  margin: 0;
   background-color: $color-background;
   perspective: 800px;
-  max-height: 100vh;
   overflow: hidden;
 }
 
@@ -40,7 +41,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: -1;
   }
 
